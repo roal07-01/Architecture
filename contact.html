@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Rojdi Alici</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Albert Sans', 'sans-serif'] },
+          colors: { mist: '#cacfcb', gold: '#c5a467' }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { --margin: 24px; --gutter: 16px; }
+    @media (min-width: 1280px) { :root { --margin: 40px; --gutter: 20px; } }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Albert Sans', sans-serif; background: #fff; color: #000; font-size: 16px; line-height: 1.4; overflow-x: hidden; }
+    .grid-w { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 var(--gutter); padding-left: var(--margin); padding-right: var(--margin); }
+    .body-14 { font-size: 14px; line-height: 1.4; }
+    .body-16 { font-size: 16px; line-height: 1.5; }
+    .body-20 { font-size: 20px; line-height: 1.4; }
+    .body-36 { font-size: 36px; line-height: 1.2; }
+    .body-48 { font-size: 48px; line-height: 1.15; }
+    .body-72 { font-size: 72px; line-height: 1.1; }
+    .link-underline { text-decoration: underline; text-underline-offset: 4px; }
+    [data-reveal] { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform; }
+    [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+    [data-reveal-image] { overflow: hidden; }
+    [data-reveal-image] img { opacity: 0; transform: scale(1.15); transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.6s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform; }
+    [data-reveal-image].is-visible img { opacity: 1; transform: scale(1); }
+    .hero-reveal { opacity: 0; transform: translateY(30px); animation: heroFadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; }
+    .hero-reveal-d1 { animation-delay: 0.5s; }
+    .hero-reveal-d2 { animation-delay: 0.7s; }
+    @keyframes heroFadeUp { to { opacity: 1; transform: translateY(0); } }
+    header a, footer a { transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), color 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+    .contact-link { transition: color 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+    .contact-link:hover { color: #c5a467; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 left-0 w-full z-50 bg-white" style="padding: 0 var(--margin);">
+    <div class="flex items-end justify-between w-full" style="height: 72px; padding-bottom: 12px;">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="assets/global/logo.png" alt="Rojdi Alici" style="height: 28px; width: auto;" />
+      </a>
+      <a href="index.html" class="body-16 hover:opacity-25">Back</a>
+    </div>
+  </header>
+
+  <!-- CONTACT CONTENT -->
+  <main class="grid-w" style="min-height: calc(100vh - 72px); padding-top: 120px; padding-bottom: 120px; align-content: center;">
+
+    <!-- Photo -->
+    <div class="col-span-4 col-start-2 hero-reveal" data-reveal-image>
+      <img src="assets/global/photo.png" alt="Rojdi Alici" class="w-full h-auto" style="max-width: 340px;" />
+    </div>
+
+    <!-- Info -->
+    <div class="col-start-7 col-end-12 flex flex-col justify-center">
+
+      <h1 class="body-48 font-light hero-reveal" style="margin-bottom: 12px;">Rojdi Alici</h1>
+
+      <p class="body-16 text-mist hero-reveal hero-reveal-d1" style="margin-bottom: 60px;">Architecture &amp; Design</p>
+
+      <div class="flex flex-col" style="gap: 28px;">
+
+        <div class="hero-reveal hero-reveal-d1">
+          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 6px;">Email</p>
+          <a href="mailto:rojdi.alici@hotmail.com" class="body-20 font-light contact-link">rojdi.alici@hotmail.com</a>
+        </div>
+
+        <div class="hero-reveal hero-reveal-d2">
+          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 6px;">Phone</p>
+          <a href="tel:+82-10-8340-2156" class="body-20 font-light contact-link">010-8340-2156</a>
+        </div>
+
+        <div class="hero-reveal hero-reveal-d2">
+          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 6px;">Location</p>
+          <p class="body-20 font-light">Seoul, South Korea</p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="flex flex-col">
+    <div class="bg-black text-white" style="padding: var(--margin);">
+      <div class="w-full mb-5 font-semibold tracking-[0.12em] uppercase" style="font-size: clamp(48px, 8vw, 120px); line-height: 1;">ROJDI ALICI</div>
+      <div class="flex justify-between body-16 opacity-50">
+        <span>All rights reserved<br>&copy; Rojdi Alici 2025</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+    var observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); }
+      });
+    }, { rootMargin: '0px 0px -80px 0px', threshold: 0.15 });
+    document.querySelectorAll('[data-reveal],[data-reveal-image]').forEach(function (el) { observer.observe(el); });
+  })();
+  </script>
+
+</body>
+</html>

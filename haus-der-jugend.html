@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haus der Jugend — Rojdi Alici</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Albert Sans', 'sans-serif'] },
+          colors: { mist: '#cacfcb', gold: '#c5a467' }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { --margin: 24px; --gutter: 16px; }
+    @media (min-width: 1280px) { :root { --margin: 40px; --gutter: 20px; } }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Albert Sans', sans-serif; background: #fff; color: #000; font-size: 16px; line-height: 1.4; overflow-x: hidden; }
+    .grid-w { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 var(--gutter); padding-left: var(--margin); padding-right: var(--margin); }
+    .body-14 { font-size: 14px; line-height: 1.4; }
+    .body-16 { font-size: 16px; line-height: 1.5; }
+    .body-20 { font-size: 20px; line-height: 1.4; }
+    .body-36 { font-size: 36px; line-height: 1.2; }
+    .body-48 { font-size: 48px; line-height: 1.15; }
+    .body-72 { font-size: 72px; line-height: 1.1; }
+    .link-underline { text-decoration: underline; text-underline-offset: 4px; }
+    [data-reveal] { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform; }
+    [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+    [data-reveal-image] { overflow: hidden; }
+    [data-reveal-image] img { opacity: 0; transform: scale(1.15); transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.6s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform; }
+    [data-reveal-image].is-visible img { opacity: 1; transform: scale(1); }
+    [data-hover-scale] { overflow: hidden; }
+    [data-hover-scale] img { transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); will-change: transform; }
+    [data-hover-scale]:hover img { transform: scale(1.05); }
+    .hero-reveal { opacity: 0; transform: translateY(30px); animation: heroFadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; }
+    .hero-reveal-d1 { animation-delay: 0.5s; }
+    .hero-reveal-d2 { animation-delay: 0.7s; }
+    @keyframes heroFadeUp { to { opacity: 1; transform: translateY(0); } }
+    header a, footer a { transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), color 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+    .info-row { border-top: 1px solid #e5e5e5; padding: 16px 0; }
+    /* Plan lightbox */
+    .plan-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      cursor: zoom-out;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.4s;
+    }
+    .plan-lightbox.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .plan-lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      transform: scale(0.95);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .plan-lightbox.is-open img {
+      transform: scale(1);
+    }
+    [data-plan-zoom] {
+      cursor: zoom-in;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 left-0 w-full z-50 bg-white" style="padding: 0 var(--margin);">
+    <div class="flex items-end justify-between w-full" style="height: 72px; padding-bottom: 12px;">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="assets/global/logo.png" alt="Rojdi Alici" style="height: 28px; width: auto;" />
+      </a>
+      <a href="index.html" class="body-16 hover:opacity-25">Back</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. PROJECT HEADER -->
+    <section class="grid-w" style="padding-top: 60px; padding-bottom: 40px;">
+      <div class="col-span-6 hero-reveal">
+        <h1 class="body-72 font-light">Haus der Jugend</h1>
+      </div>
+      <div class="col-start-9 col-end-13 flex flex-col justify-end hero-reveal hero-reveal-d1">
+        <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;">Student Housing</div>
+        <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;">Graz, Austria</div>
+        <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;">2024</div>
+        <div class="body-14 text-mist uppercase tracking-wider">Completed</div>
+      </div>
+    </section>
+
+    <!-- 2. HERO IMAGE -->
+    <section class="hero-reveal hero-reveal-d2" data-hover-scale style="padding: 0 var(--margin);">
+      <img src="assets/haus der jugend/render/main render.png" alt="Haus der Jugend main render" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+    </section>
+
+    <!-- 3. DESCRIPTION + INFO GRID -->
+    <section class="grid-w" style="padding-top: 80px; padding-bottom: 80px;">
+      <div class="col-span-7" data-reveal>
+        <p class="body-20 font-light" style="color: #000;">To meet the need for both affordable student housing and shared campus facilities, this project organizes its functions by floor. The ground level is designed as an open, public base containing a caf&eacute;, workshops, and a gym for all students to use. Above this base, the building holds the private residential floors.</p>
+        <p class="body-20 font-light" style="margin-top: 24px; color: #000;">This clear separation of spaces, based on the real needs of students, creates a balance between group activity and private life. The result is a complete environment that supports all aspects of being a student. The building's design is straightforward and practical, with a visible structure and internal systems chosen for durability and easy upkeep.</p>
+      </div>
+      <div class="col-start-9 col-end-13" data-reveal>
+        <div class="info-row flex justify-between body-14">
+          <span class="text-mist uppercase tracking-wider">Country</span>
+          <span>Austria</span>
+        </div>
+        <div class="info-row flex justify-between body-14">
+          <span class="text-mist uppercase tracking-wider">Client</span>
+          <span>Academic</span>
+        </div>
+        <div class="info-row flex justify-between body-14">
+          <span class="text-mist uppercase tracking-wider">Year</span>
+          <span>2024</span>
+        </div>
+        <div class="info-row flex justify-between body-14" style="border-bottom: 1px solid #e5e5e5;">
+          <span class="text-mist uppercase tracking-wider">Architecture</span>
+          <span>Rojdi Alici</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. QUOTE ON DARK IMAGE -->
+    <section style="height: 600px; background: #1a1612; display: flex; align-items: center; justify-content: center; padding: 0 var(--margin);">
+        <p class="text-white text-center body-36 font-light" data-reveal style="font-family: 'Playfair Display', serif; font-style: italic; max-width: 800px;">&ldquo;A building that organizes community by elevation &mdash; public life at ground, private life above.&rdquo;</p>
+    </section>
+
+    <!-- RENDER + SKETCH SIDE BY SIDE -->
+    <section class="grid-w" style="padding-top: 80px; padding-bottom: 80px;">
+      <div class="col-span-5 flex items-center justify-center" data-reveal-image data-hover-scale>
+        <img src="assets/haus der jugend/render/11.png" alt="Haus der Jugend render" class="h-auto" style="max-width: 100%;" />
+      </div>
+      <div class="col-start-7 col-end-12 flex items-center justify-center" data-reveal-image>
+        <img src="assets/haus der jugend/sketches/Adobe Scan 31. Aug. 2025 (1)(1).jpg" alt="Hand sketch" class="h-auto" style="max-width: 100%;" />
+      </div>
+    </section>
+
+    <!-- 6. MAIN PLANS (2OG + sc2 side by side, larger) -->
+    <section class="grid-w" style="padding-top: 80px; padding-bottom: 40px;">
+      <div class="col-span-6" data-reveal-image>
+        <div class="cursor-pointer" data-plan-zoom>
+          <img src="assets/haus der jugend/plans/2OG(1).jpg" alt="Floor Plan 2OG" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+        </div>
+      </div>
+      <div class="col-span-6" data-reveal-image>
+        <div class="cursor-pointer" data-plan-zoom>
+          <img src="assets/haus der jugend/plans/sc2(1).jpg" alt="Floor Plan SC2" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+        </div>
+      </div>
+    </section>
+
+    <!-- TEXT ABOUT VERTICAL ORGANIZATION -->
+    <section class="grid-w" style="padding-top: 40px; padding-bottom: 80px;">
+      <div class="col-start-4 col-end-10" data-reveal>
+        <p class="body-20 font-light">The vertical organization concept drives the entire design. Public program occupies the ground floor, creating an active, permeable base. Above, the residential floors step back to provide privacy and daylight. Each level responds to a specific need, giving the building a legible logic from the outside in.</p>
+      </div>
+    </section>
+
+    <!-- 7. PLANS GRID (2x2 with remaining 2 plans) -->
+    <section class="grid-w" style="padding-bottom: 80px;">
+      <div class="col-span-6 cursor-pointer" data-reveal-image data-hover-scale data-plan-zoom style="overflow: hidden;">
+        <img src="assets/haus der jugend/plans/Fassadenschnitt 1zu20.jpg" alt="Facade section 1:20" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+      </div>
+      <div class="col-span-6 cursor-pointer" data-reveal-image data-hover-scale data-plan-zoom style="overflow: hidden;">
+        <img src="assets/haus der jugend/plans/Attika Digital 1zu10 a3.jpg" alt="Attika detail 1:10" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+      </div>
+    </section>
+
+    <!-- 8. DIAGRAM STRIP -->
+    <section style="padding-top: 80px; padding-bottom: 80px;">
+      <div class="grid-w" data-reveal>
+        <div class="col-span-12">
+          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 40px;">Site Analysis</p>
+        </div>
+        <div class="col-span-12 grid grid-cols-5" style="gap: var(--gutter);">
+          <div>
+            <img src="assets/haus der jugend/diagramm/Karte (2)-01.jpg" alt="Diagram 1" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+          </div>
+          <div>
+            <img src="assets/haus der jugend/diagramm/Karte (2)-02.jpg" alt="Diagram 2" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+          </div>
+          <div>
+            <img src="assets/haus der jugend/diagramm/Karte (2)-03.jpg" alt="Diagram 3" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+          </div>
+          <div>
+            <img src="assets/haus der jugend/diagramm/Karte (2)-04.jpg" alt="Diagram 4" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+          </div>
+          <div>
+            <img src="assets/haus der jugend/diagramm/Karte (2)-05.jpg" alt="Diagram 5" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. NEXT PROJECT -->
+    <section class="flex items-center justify-center" style="padding: 100px 0;">
+      <a href="garden-of-knowledge.html" class="body-48 font-light text-black" style="transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);" onmouseover="this.style.opacity='0.4'" onmouseout="this.style.opacity='1'">Next: Garden of Knowledge &rarr;</a>
+    </section>
+
+  </main>
+
+  <!-- Plan Lightbox -->
+  <div class="plan-lightbox" id="plan-lightbox">
+    <img src="" alt="Plan detail" id="plan-lightbox-img" />
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="flex flex-col">
+    <div class="grid-w bg-white" style="padding-top: 60px; padding-bottom: var(--margin);">
+      <div class="col-span-5" data-reveal>
+        <a href="contact.html" class="link-underline text-black body-36">Contact me</a>
+      </div>
+      <div class="col-start-10 col-end-13 flex items-end body-16">
+        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top>Back to top</div>
+      </div>
+    </div>
+    <div class="bg-black text-white" style="padding: var(--margin);">
+      <div class="w-full mb-5 font-semibold tracking-[0.12em] uppercase" style="font-size: clamp(48px, 8vw, 120px); line-height: 1;">ROJDI ALICI</div>
+      <div class="flex justify-between body-16 opacity-50">
+        <span>All rights reserved<br>&copy; Rojdi Alici 2025</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+    var observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); }
+      });
+    }, { rootMargin: '0px 0px -80px 0px', threshold: 0.15 });
+    document.querySelectorAll('[data-reveal],[data-reveal-image]').forEach(function (el) { observer.observe(el); });
+    var backBtn = document.querySelector('[data-back-to-top]');
+    if (backBtn) { backBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); }); }
+    // Plan lightbox
+    var lightbox = document.getElementById('plan-lightbox');
+    var lightboxImg = document.getElementById('plan-lightbox-img');
+    document.querySelectorAll('[data-plan-zoom]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var img = el.querySelector('img') || el;
+        if (img.src) {
+          lightboxImg.src = img.src;
+          lightbox.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+    if (lightbox) {
+      lightbox.addEventListener('click', function () {
+        lightbox.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    }
+  })();
+  </script>
+
+</body>
+</html>

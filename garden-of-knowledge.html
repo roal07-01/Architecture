@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garden of Knowledge — Rojdi Alici</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --margin: 24px; --gutter: 16px; }
+    @media (min-width: 1280px) { :root { --margin: 40px; --gutter: 20px; } }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Albert Sans', sans-serif; background: #fff; color: #000; font-size: 16px; line-height: 1.4; overflow-x: hidden; }
+    .grid-w { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 var(--gutter); padding-left: var(--margin); padding-right: var(--margin); }
+    .body-14 { font-size: 14px; line-height: 1.4; }
+    .body-16 { font-size: 16px; line-height: 1.5; }
+    .body-20 { font-size: 20px; line-height: 1.4; }
+    .body-36 { font-size: 36px; line-height: 1.2; }
+    .body-48 { font-size: 48px; line-height: 1.15; }
+    .body-72 { font-size: 72px; line-height: 1.1; }
+    .link-underline { text-decoration: underline; text-underline-offset: 4px; }
+    [data-reveal] { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform; }
+    [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+    [data-reveal-image] { overflow: hidden; }
+    [data-reveal-image] img { opacity: 0; transform: scale(1.15); transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.6s cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform; }
+    [data-reveal-image].is-visible img { opacity: 1; transform: scale(1); }
+    [data-hover-scale] { overflow: hidden; }
+    [data-hover-scale] img { transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); will-change: transform; }
+    [data-hover-scale]:hover img { transform: scale(1.05); }
+    .hero-reveal { opacity: 0; transform: translateY(30px); animation: heroFadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards; }
+    .hero-reveal-d1 { animation-delay: 0.5s; }
+    .hero-reveal-d2 { animation-delay: 0.7s; }
+    @keyframes heroFadeUp { to { opacity: 1; transform: translateY(0); } }
+    header a, footer a { transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), color 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+    .info-row { border-top: 1px solid #e5e5e5; padding: 16px 0; }
+    /* Plan lightbox */
+    .plan-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      cursor: zoom-out;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.4s;
+    }
+    .plan-lightbox.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .plan-lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      transform: scale(0.95);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .plan-lightbox.is-open img {
+      transform: scale(1);
+    }
+    [data-plan-zoom] {
+      cursor: zoom-in;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 left-0 w-full z-50 bg-white" style="padding: 0 var(--margin);">
+    <div class="flex items-end justify-between w-full" style="height: 72px; padding-bottom: 12px;">
+      <a href="index.html" class="flex-shrink-0"><img src="assets/global/logo.png" alt="Rojdi Alici" style="height: 28px; width: auto;" /></a>
+      <a href="index.html" class="body-16 hover:opacity-25">Back</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. PROJECT HEADER -->
+    <section class="grid-w" style="padding-top: 60px; padding-bottom: 60px;">
+      <div class="col-span-7">
+        <h1 class="body-72 hero-reveal" style="font-weight: 400;">Garden of Knowledge</h1>
+      </div>
+      <div class="col-start-9 col-end-13 flex flex-col justify-end">
+        <div class="hero-reveal hero-reveal-d1 body-14" style="color: #cacfcb;">
+          <span>Library</span><br />
+          <span>Seoul, South Korea</span><br />
+          <span>2023</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. HERO IMAGE -->
+    <section style="padding: 0 var(--margin);">
+      <div data-reveal-image data-hover-scale style="width: 100%;">
+        <img src="assets/garden of knowledge/render/main render.png" alt="Garden of Knowledge — Main Render" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+      </div>
+    </section>
+
+    <!-- 3. DESCRIPTION + INFO GRID -->
+    <section class="grid-w" style="padding-top: 80px; padding-bottom: 80px;">
+      <div class="col-span-7" data-reveal>
+        <p class="body-20" style="color: #000;">My bachelor project reimagines the modern library through the Renaissance concept of the "Memory Theater," conceived by Giulio Camillo. Like its historical precedent, this library is designed as a physical architecture that organizes and maps a universe of knowledge.</p>
+        <p class="body-20 mt-6" style="color: #000;">The design translates this idea into a contemporary spatial metaphor: a solar system of knowledge. The library's main floor is an open landscape where major disciplines like literature, science, religion are housed in distinct pavilions, or "planets." These are interconnected by a network of walkable, organic pathways, allowing visitors to navigate the collection as if exploring a planetary system. Within each section, smaller "bookhouses" with bark-like textures offer quiet nests for focused study, grounding the grand concept in the intimate act of reading.</p>
+      </div>
+      <div class="col-start-9 col-end-13" data-reveal>
+        <div class="info-row flex justify-between">
+          <span class="body-14" style="color: #cacfcb;">Country</span>
+          <span class="body-14">South Korea</span>
+        </div>
+        <div class="info-row flex justify-between">
+          <span class="body-14" style="color: #cacfcb;">Client</span>
+          <span class="body-14">Bachelor Thesis</span>
+        </div>
+        <div class="info-row flex justify-between">
+          <span class="body-14" style="color: #cacfcb;">Year</span>
+          <span class="body-14">2023</span>
+        </div>
+        <div class="info-row flex justify-between" style="border-bottom: 1px solid #e5e5e5;">
+          <span class="body-14" style="color: #cacfcb;">Architecture</span>
+          <span class="body-14">Rojdi Alici</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. IMAGE + TEXT -->
+    <section class="grid-w" style="padding-bottom: 100px;">
+      <div class="col-span-7" data-reveal-image data-hover-scale style="overflow: hidden;">
+        <img src="assets/garden of knowledge/render/archviz-result (6).png" alt="Garden of Knowledge — Interior Render" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+      </div>
+      <div class="col-start-9 col-end-13 flex items-end" data-reveal>
+        <p class="body-16" style="color: #000;">The Memory Theater, originally conceived as a wooden structure housing all human knowledge, becomes the conceptual engine of this library. Each pavilion embodies a branch of understanding — a planet in its own orbit — while the connective pathways mirror the associative nature of thought itself.</p>
+      </div>
+    </section>
+
+    <!-- 5. QUOTE ON DARK IMAGE -->
+    <section style="height: 600px; background: #0f1a12; display: flex; align-items: center; justify-content: center; padding: 0 var(--margin);">
+        <div style="max-width: 720px; text-align: center;" data-reveal>
+          <p style="font-family: 'Playfair Display', serif; font-style: italic; color: #fff; font-size: 36px; line-height: 1.3;">"A solar system of knowledge — where every discipline orbits the act of reading."</p>
+        </div>
+    </section>
+
+    <!-- RENDER -->
+    <section style="padding: 80px var(--margin) 0;" data-reveal-image data-hover-scale>
+      <img src="assets/garden of knowledge/render/wmremove-transformed.png" alt="Garden of Knowledge render" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+    </section>
+
+    <!-- 6. SKETCH ROW -->
+    <section class="grid-w" style="padding-top: 100px; padding-bottom: 100px;">
+      <div class="col-span-4" data-reveal-image>
+        <img src="assets/garden of knowledge/sketches/7.png" alt="Sketch 1" class="max-w-full h-auto max-h-[85vh] mx-auto block" style="max-width: 600px; margin: 0 auto; display: block;" />
+      </div>
+      <div class="col-span-4" data-reveal-image>
+        <img src="assets/garden of knowledge/sketches/Adobe Scan 16.05.2022(1)_pages-to-jpg-0001.jpg" alt="Sketch 2" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+      </div>
+      <div class="col-span-4" data-reveal-image>
+        <img src="assets/garden of knowledge/sketches/Adobe Scan 16.05.2022(1)_pages-to-jpg-0002.jpg" alt="Sketch 3" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+      </div>
+    </section>
+
+    <!-- 7. TEXT + DIAGRAMS -->
+    <section class="grid-w" style="padding-bottom: 100px;">
+      <div class="col-span-4 flex items-start" data-reveal>
+        <p class="body-16" style="color: #000;">Each pavilion functions as a self-contained world — a planet dedicated to a single field of knowledge. Their forms emerge from organic geometries, echoing the natural growth patterns found in forests and root systems. The smaller bookhouses nested within each pavilion feature bark-like textured walls, creating intimate alcoves that invite focused, solitary reading amidst the library's expansive landscape.</p>
+      </div>
+      <div class="col-start-6 col-end-13 flex flex-col gap-6">
+        <div data-reveal-image>
+          <img src="assets/garden of knowledge/diagramms/3.png" alt="Diagram 1" class="max-w-full h-auto max-h-[85vh] mx-auto block" style="max-width: 800px; margin: 0 auto; display: block;" />
+        </div>
+        <div data-reveal-image>
+          <img src="assets/garden of knowledge/diagramms/8.png" alt="Diagram 2" class="max-w-full h-auto max-h-[85vh] mx-auto block" style="max-width: 500px; margin: 0 auto; display: block;" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PLANS SIDE BY SIDE -->
+    <section class="grid-w" style="padding-bottom: 100px;">
+      <div class="col-span-6 cursor-pointer" data-reveal-image data-hover-scale data-plan-zoom style="overflow: hidden;">
+        <img src="assets/garden of knowledge/plans/4.png" alt="Plan 1" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+      </div>
+      <div class="col-span-6 cursor-pointer" data-reveal-image data-hover-scale data-plan-zoom style="overflow: hidden;">
+        <img src="assets/garden of knowledge/plans/5.png" alt="Plan 2" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+      </div>
+    </section>
+
+    <!-- 9. NEXT PROJECT -->
+    <section class="grid-w" style="padding-top: 60px; padding-bottom: 100px;">
+      <div class="col-span-12" data-reveal>
+        <a href="green-maze.html" class="body-48 hover:opacity-25" style="font-weight: 400; transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);">Next: Green Maze &rarr;</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Plan Lightbox -->
+  <div class="plan-lightbox" id="plan-lightbox">
+    <img src="" alt="Plan detail" id="plan-lightbox-img" />
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="flex flex-col">
+    <div class="grid-w bg-white" style="padding-top: 60px; padding-bottom: var(--margin);">
+      <div class="col-span-5" data-reveal><a href="contact.html" class="link-underline text-black body-36">Contact me</a></div>
+      <div class="col-start-10 col-end-13 flex items-end body-16"><div class="text-mist cursor-pointer hover:text-black" data-back-to-top>Back to top</div></div>
+    </div>
+    <div class="bg-black text-white" style="padding: var(--margin);">
+      <div class="w-full mb-5 font-semibold tracking-[0.12em] uppercase" style="font-size: clamp(48px, 8vw, 120px); line-height: 1;">ROJDI ALICI</div>
+      <div class="flex justify-between body-16 opacity-50"><span>All rights reserved<br>&copy; Rojdi Alici 2025</span></div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+  (function () {
+    'use strict';
+    var observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); } });
+    }, { rootMargin: '0px 0px -80px 0px', threshold: 0.15 });
+    document.querySelectorAll('[data-reveal],[data-reveal-image]').forEach(function (el) { observer.observe(el); });
+    var backBtn = document.querySelector('[data-back-to-top]');
+    if (backBtn) { backBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); }); }
+    // Plan lightbox
+    var lightbox = document.getElementById('plan-lightbox');
+    var lightboxImg = document.getElementById('plan-lightbox-img');
+    document.querySelectorAll('[data-plan-zoom]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var img = el.querySelector('img') || el;
+        if (img.src) {
+          lightboxImg.src = img.src;
+          lightbox.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+    if (lightbox) {
+      lightbox.addEventListener('click', function () {
+        lightbox.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    }
+  })();
+  </script>
+
+</body>
+</html>

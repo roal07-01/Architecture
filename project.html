@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — Rojdi Alici</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Albert Sans', 'sans-serif'],
+          },
+          colors: {
+            mist: '#cacfcb',
+            gold: '#c5a467',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --margin: 24px;
+      --gutter: 16px;
+    }
+    @media (min-width: 1280px) {
+      :root {
+        --margin: 40px;
+        --gutter: 20px;
+      }
+    }
+
+    body {
+      font-family: 'Albert Sans', sans-serif;
+      background: #fff;
+      color: #000;
+      font-size: 16px;
+      line-height: 1.4;
+      overflow-x: hidden;
+    }
+
+    .grid-w {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0 var(--gutter);
+      padding-left: var(--margin);
+      padding-right: var(--margin);
+    }
+
+    .body-14 { font-size: 14px; line-height: 1.4; }
+    .body-16 { font-size: 16px; line-height: 1.5; }
+    .body-20 { font-size: 20px; line-height: 1.4; }
+    .body-36 { font-size: 36px; line-height: 1.2; }
+    .body-48 { font-size: 48px; line-height: 1.15; }
+    .body-72 { font-size: 72px; line-height: 1.1; }
+
+    .link-underline {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Scroll reveal */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+    [data-reveal-image] { overflow: hidden; }
+    [data-reveal-image] img {
+      opacity: 0;
+      transform: scale(1.15);
+      transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    [data-reveal-image].is-visible img { opacity: 1; transform: scale(1); }
+
+    [data-hover-scale] { overflow: hidden; }
+    [data-hover-scale] img {
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    [data-hover-scale]:hover img { transform: scale(1.05); }
+
+    .hero-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroFadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+    }
+    .hero-reveal-d1 { animation-delay: 0.5s; }
+    .hero-reveal-d2 { animation-delay: 0.7s; }
+    @keyframes heroFadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header a, footer a {
+      transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Info grid dividers */
+    .info-row {
+      border-top: 1px solid #e5e5e5;
+      padding: 16px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="sticky top-0 left-0 w-full z-50 bg-white" style="padding: 0 var(--margin);">
+    <div class="flex items-end justify-between w-full" style="height: 72px; padding-bottom: 12px;">
+      <a href="index.html" class="flex-shrink-0 font-semibold tracking-[0.08em] uppercase hover:opacity-25" style="font-size: 15px; letter-spacing: 0.12em;">ROJDI ALICI</a>
+      <a href="index.html" class="body-16 hover:opacity-25">Back</a>
+    </div>
+  </header>
+
+  <!-- ===== PROJECT HEADER ===== -->
+  <section class="grid-w" style="padding-top: 80px; padding-bottom: 60px;">
+    <!-- Title -->
+    <div class="col-span-6">
+      <h1 class="body-72 hero-reveal" id="project-title">Loller</h1>
+    </div>
+    <!-- Meta info -->
+    <div class="col-start-9 col-end-13 flex flex-col gap-y-1 body-14 hero-reveal hero-reveal-d1">
+      <div class="text-mist uppercase tracking-wide mb-2" id="project-type">Multi-residential</div>
+      <div id="project-location">Seoul, South Korea</div>
+      <div id="project-year">2025</div>
+      <div id="project-status">Completed</div>
+    </div>
+  </section>
+
+  <!-- ===== HERO IMAGE ===== -->
+  <section style="padding: 0 var(--margin);">
+    <div class="w-full hero-reveal hero-reveal-d2" data-hover-scale style="max-height: 85vh; overflow: hidden;">
+      <img id="project-hero" src="https://placehold.co/1400x600/444/444" alt="" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
+    </div>
+  </section>
+
+  <!-- ===== DESCRIPTION + INFO GRID ===== -->
+  <section class="grid-w" style="padding-top: 80px; padding-bottom: 80px;">
+    <!-- Description -->
+    <div class="col-span-7" data-reveal>
+      <p class="body-20" id="project-description">Situated in the heart of Itaewon, Loller is a collection of six residential apartments with an emphasis on honest materiality and a distinctive identity, built for a contemporary urban context blending tradition with innovation.</p>
+    </div>
+
+    <!-- Info grid -->
+    <div class="col-start-9 col-end-13 body-16" data-reveal>
+      <div class="info-row flex justify-between">
+        <span class="text-mist">Country</span>
+        <span id="info-country">South Korea</span>
+      </div>
+      <div class="info-row flex justify-between">
+        <span class="text-mist">Client</span>
+        <span id="info-client">Private</span>
+      </div>
+      <div class="info-row flex justify-between">
+        <span class="text-mist">Year</span>
+        <span id="info-year">2025</span>
+      </div>
+      <div class="info-row flex justify-between border-b border-[#e5e5e5]" style="padding-bottom: 16px;">
+        <span class="text-mist">Architecture</span>
+        <span id="info-arch">Rojdi Alici</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LARGE QUOTE ON DARK IMAGE ===== -->
+  <section class="relative w-full" style="min-height: 600px;" data-reveal-image>
+    <img src="https://placehold.co/1440x600/333/333" alt="" class="w-full h-full object-cover absolute inset-0" />
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="relative z-10 flex items-center h-full" style="min-height: 600px; padding: 80px var(--margin);">
+      <h2 class="text-white italic" data-reveal style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(36px, 5vw, 72px); line-height: 1.1; max-width: 800px;" id="project-quote">Inspired by the tension between permanence and lightness to maximise spatial flexibility.</h2>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT THE PROJECT (text + image) ===== -->
+  <section class="grid-w" style="padding-top: 100px; padding-bottom: 60px;">
+    <div class="col-span-4" data-reveal>
+      <div class="uppercase body-14 text-mist mb-4">About the project</div>
+      <p class="body-16" id="project-about">Responding to the local context, the architectural language blended provides a thoughtful response to the scale and character of the streetscape, with heritage-inspired materials combined with the clean edges.</p>
+    </div>
+    <div class="col-start-6 col-end-13" data-reveal-image data-hover-scale>
+      <div class="w-full" style="height: 500px; overflow: hidden;">
+        <img src="https://placehold.co/900x500/555/555" alt="" class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IMAGE PAIR ===== -->
+  <section class="grid-w" style="padding-bottom: 60px;">
+    <div class="col-span-7" data-reveal-image data-hover-scale>
+      <div class="w-full" style="height: 480px; overflow: hidden;">
+        <img src="https://placehold.co/840x480/666/666" alt="" class="w-full h-full object-cover" />
+      </div>
+    </div>
+    <div class="col-start-8 col-end-13 flex items-end" data-reveal>
+      <p class="body-16" id="project-detail-1">Influenced by residential ideas, embracing views of local's collective memory, architecture is the translation of space, in an equilibrium with the surrounding space.</p>
+    </div>
+  </section>
+
+  <!-- ===== TEXT + IMAGE REVERSED ===== -->
+  <section class="grid-w" style="padding-bottom: 60px;">
+    <div class="col-span-4 flex items-end" data-reveal>
+      <div>
+        <div class="uppercase body-14 text-mist mb-4">About the project</div>
+        <p class="body-16" id="project-detail-2">The interior experience frames light and views with careful layering. Each home has been carefully crafted to enhance daily ritual and provide a sense of quiet sophistication.</p>
+      </div>
+    </div>
+    <div class="col-start-6 col-end-13" data-reveal-image data-hover-scale>
+      <div class="w-full" style="height: 500px; overflow: hidden;">
+        <img src="https://placehold.co/900x500/777/777" alt="" class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FULL WIDTH IMAGE ===== -->
+  <section style="padding: 0 var(--margin) 60px;" data-reveal-image data-hover-scale>
+    <div class="w-full" style="height: 560px; overflow: hidden;">
+      <img src="https://placehold.co/1400x560/888/888" alt="" class="w-full h-full object-cover" />
+    </div>
+  </section>
+
+  <!-- ===== CLOSING DETAIL ===== -->
+  <section class="grid-w" style="padding-bottom: 100px;">
+    <div class="col-span-4" data-reveal>
+      <div class="uppercase body-14 text-mist mb-4">About the project</div>
+      <p class="body-16" id="project-detail-3">With special consideration to all aspects of design, the project emphasises material honesty, spatial generosity, and a restrained palette to ensure enduring quality.</p>
+    </div>
+    <div class="col-start-6 col-end-10" data-reveal-image data-hover-scale>
+      <div class="w-full" style="height: 400px; overflow: hidden;">
+        <img src="https://placehold.co/500x400/999/999" alt="" class="w-full h-full object-cover" />
+      </div>
+    </div>
+    <div class="col-start-10 col-end-13" data-reveal-image data-hover-scale>
+      <div class="w-full" style="height: 400px; overflow: hidden;">
+        <img src="https://placehold.co/400x400/aaa/aaa" alt="" class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEXT PROJECT ===== -->
+  <section class="w-full flex justify-center items-center" data-reveal style="padding: 60px var(--margin);">
+    <a href="#" class="body-48 hover:opacity-50 transition-opacity" id="next-project-link" style="transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);">
+      Next Project &rarr;
+    </a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="flex flex-col">
+    <div class="grid-w bg-white" style="padding-top: 60px; padding-bottom: var(--margin);">
+      <div class="col-span-5" data-reveal>
+        <a href="#" class="link-underline text-black body-36">Contact me</a>
+      </div>
+      <div class="col-start-10 col-end-13 flex items-end body-16">
+        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top>Back to top</div>
+      </div>
+    </div>
+    <div class="bg-black text-white" style="padding: var(--margin);">
+      <div class="w-full mb-5 font-semibold tracking-[0.12em] uppercase" style="font-size: clamp(48px, 8vw, 120px); line-height: 1;">ROJDI ALICI</div>
+      <div class="flex justify-between body-16 opacity-50">
+        <span>All rights reserved<br>&copy; Rojdi Alici 2025</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // Project data
+      var projects = {
+        'die-keramik-werkstatt': {
+          title: 'Die Keramik Werkstatt',
+          type: 'Cultural',
+          location: 'Seoul, South Korea',
+          year: '2025',
+          status: 'Completed',
+          description: 'A ceramics workshop that celebrates the dialogue between craft and architecture. Raw, tactile materials form spaces where making and inhabiting become inseparable — clay walls, kiln-fired brick, and generous daylight shape an atmosphere of focused creative labour.',
+          quote: 'Where the act of making is inseparable from the space itself.',
+          country: 'South Korea',
+          client: 'Private',
+          arch: 'Rojdi Alici',
+          next: 'museum-lucis'
+        },
+        'garden-of-knowledge': {
+          title: 'Garden of Knowledge',
+          type: 'Civic',
+          location: 'Gangnam, Seoul',
+          year: '2025',
+          status: 'Completed',
+          description: 'A public library and learning garden that dissolves the threshold between reading and landscape. Terraced reading rooms step down into sunken courtyards, blurring the line between interior study and open-air contemplation.',
+          quote: 'Knowledge grows best in the open air — architecture as fertile ground.',
+          country: 'South Korea',
+          client: 'Seoul Metropolitan Government',
+          arch: 'Rojdi Alici',
+          next: 'green-maze'
+        },
+        'green-maze': {
+          title: 'Green Maze',
+          type: 'Residential',
+          location: 'Yongsan, Seoul',
+          year: '2024',
+          status: 'Completed',
+          description: 'A residential complex where landscape and dwelling intertwine. Planted walls, elevated walkways, and fragmented volumes create a living labyrinth — residents navigate through gardens rather than corridors, finding privacy within abundance.',
+          quote: 'A home you discover by getting beautifully lost.',
+          country: 'South Korea',
+          client: 'Private',
+          arch: 'Rojdi Alici',
+          next: 'die-keramik-werkstatt'
+        },
+        'haus-der-jugend': {
+          title: 'Haus der Jugend',
+          type: 'Civic',
+          location: 'Jongno, Seoul',
+          year: '2024',
+          status: 'Completed',
+          description: 'A youth centre designed as a threshold between the structured world of education and the freedom of self-directed time. Open floors, adaptable partitions, and generous social stairs give young people ownership over how they gather and grow.',
+          quote: 'Architecture that trusts its inhabitants to define its purpose.',
+          country: 'South Korea',
+          client: 'Jongno District Office',
+          arch: 'Rojdi Alici',
+          next: 'garden-of-knowledge'
+        },
+        'museum-lucis': {
+          title: 'Museum Lucis',
+          type: 'Cultural',
+          location: 'Bukchon, Seoul',
+          year: '2023',
+          status: 'Completed',
+          description: 'A museum of light set within a heritage precinct. The building captures, filters, and choreographs natural light through deep reveals, translucent stone screens, and a central oculus — making luminosity itself the permanent collection.',
+          quote: 'Light as the only exhibit that never repeats.',
+          country: 'South Korea',
+          client: 'Cultural Foundation of Korea',
+          arch: 'Rojdi Alici',
+          next: 'interior-design'
+        },
+        'interior-design': {
+          title: 'Interior Design',
+          type: 'Interior',
+          location: 'Hannam, Seoul',
+          year: '2023',
+          status: 'Completed',
+          description: 'A complete interior transformation of a mid-century apartment. Walls were removed to reveal the original structural rhythm, and a restrained palette of timber, stone, and plaster creates spaces that feel both generous and grounded.',
+          quote: 'Stripping back to reveal the architecture that was always there.',
+          country: 'South Korea',
+          client: 'Private',
+          arch: 'Rojdi Alici',
+          next: 'haus-der-jugend'
+        }
+      };
+
+      // Read project slug from URL
+      var params = new URLSearchParams(window.location.search);
+      var slug = params.get('p') || 'die-keramik-werkstatt';
+      var data = projects[slug] || projects['die-keramik-werkstatt'];
+
+      // Populate page
+      document.title = data.title + ' — Rojdi Alici';
+      document.getElementById('project-title').textContent = data.title;
+      document.getElementById('project-type').textContent = data.type;
+      document.getElementById('project-location').textContent = data.location;
+      document.getElementById('project-year').textContent = data.year;
+      document.getElementById('project-status').textContent = data.status;
+      document.getElementById('project-description').textContent = data.description;
+      document.getElementById('project-quote').textContent = data.quote;
+      document.getElementById('info-country').textContent = data.country;
+      document.getElementById('info-client').textContent = data.client;
+      document.getElementById('info-year').textContent = data.year;
+      document.getElementById('info-arch').textContent = data.arch;
+
+      // Next project link
+      var nextLink = document.getElementById('next-project-link');
+      var nextData = projects[data.next];
+      if (nextData) {
+        nextLink.innerHTML = 'Next: ' + nextData.title + ' &rarr;';
+        nextLink.href = 'project.html?p=' + data.next;
+      }
+
+      // Intersection Observer for reveals
+      var observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -80px 0px', threshold: 0.15 });
+
+      document.querySelectorAll('[data-reveal],[data-reveal-image]').forEach(function (el) {
+        observer.observe(el);
+      });
+
+      // Back to top
+      var backBtn = document.querySelector('[data-back-to-top]');
+      if (backBtn) {
+        backBtn.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

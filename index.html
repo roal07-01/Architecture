@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rojdi Alici — Melbourne based Architecture & Interior Design studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Albert Sans', 'sans-serif'],
+          },
+          colors: {
+            mist: '#cacfcb',
+          },
+          spacing: {
+            'margin': '24px',
+            'gutter': '16px',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --margin: 24px;
+      --gutter: 16px;
+      --color-mist: #cacfcb;
+    }
+    @media (min-width: 1280px) {
+      :root {
+        --margin: 40px;
+        --gutter: 20px;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Albert Sans', sans-serif;
+      background: #fff;
+      color: #000;
+      font-size: 16px;
+      line-height: 1.4;
+      overflow-x: hidden;
+    }
+
+    /* Grid system matching original */
+    .grid-w {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0 var(--gutter);
+      padding-left: var(--margin);
+      padding-right: var(--margin);
+    }
+
+    /* Corner bracket decorations */
+    .corner-tl { position: absolute; width: 80px; height: 80px; left: 0; top: 0; }
+    .corner-tl::before { content: ''; position: absolute; width: 48px; height: 1px; background: #000; left: 16px; bottom: 0; }
+    .corner-tl::after { content: ''; position: absolute; width: 1px; height: 48px; background: #000; right: 0; top: 16px; }
+
+    .corner-tr { position: absolute; width: 80px; height: 80px; right: 0; top: 0; }
+    .corner-tr::before { content: ''; position: absolute; width: 48px; height: 1px; background: #000; right: 16px; bottom: 0; }
+    .corner-tr::after { content: ''; position: absolute; width: 1px; height: 48px; background: #000; left: 0; top: 16px; }
+
+    .corner-bl { position: absolute; width: 80px; height: 80px; left: 0; bottom: 0; }
+    .corner-bl::before { content: ''; position: absolute; width: 48px; height: 1px; background: #000; left: 16px; top: 0; }
+    .corner-bl::after { content: ''; position: absolute; width: 1px; height: 48px; background: #000; right: 0; bottom: 16px; }
+
+    .corner-br { position: absolute; width: 80px; height: 80px; right: 0; bottom: 0; }
+    .corner-br::before { content: ''; position: absolute; width: 48px; height: 1px; background: #000; right: 16px; top: 0; }
+    .corner-br::after { content: ''; position: absolute; width: 1px; height: 48px; background: #000; left: 0; bottom: 16px; }
+
+    /* Text size classes matching original */
+    .body-14 { font-size: 14px; line-height: 1.4; }
+    .body-16 { font-size: 16px; line-height: 1.5; }
+    .body-20 { font-size: 20px; line-height: 1.4; }
+    .body-36 { font-size: 36px; line-height: 1.2; }
+    .body-48 { font-size: 48px; line-height: 1.15; }
+    .body-72 { font-size: 72px; line-height: 1.1; }
+    .body-100 { font-size: 100px; line-height: 1.05; }
+
+    @media (min-width: 1280px) {
+      .xl\:body-48 { font-size: 48px; line-height: 1.15; }
+      .xl\:body-72 { font-size: 72px; line-height: 1.1; }
+      .xl\:body-100 { font-size: 100px; line-height: 1.05; }
+    }
+
+    .svg-wrapper svg { width: 100%; height: auto; }
+
+    /* Works item title spacing */
+    .works-item-title { letter-spacing: 0.04em; }
+
+    /* Image cover utility */
+    .img-cover { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Link underline */
+    .link-underline {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* ===== SCROLL REVEAL ANIMATIONS ===== */
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(40px);
+      transition:
+        opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered children in grids */
+    [data-reveal-stagger] > * {
+      opacity: 0;
+      transform: translateY(40px);
+      transition:
+        opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    [data-reveal-stagger].is-visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Restore intentional opacity on staggered children after reveal */
+    [data-reveal-stagger].is-visible > .opacity-40 { opacity: 0.4; }
+    [data-reveal-stagger].is-visible > .opacity-20 { opacity: 0.2; }
+    [data-reveal-stagger].is-visible > *:nth-child(1) { transition-delay: 0s; }
+    [data-reveal-stagger].is-visible > *:nth-child(2) { transition-delay: 0.1s; }
+    [data-reveal-stagger].is-visible > *:nth-child(3) { transition-delay: 0.2s; }
+    [data-reveal-stagger].is-visible > *:nth-child(4) { transition-delay: 0.3s; }
+    [data-reveal-stagger].is-visible > *:nth-child(5) { transition-delay: 0.4s; }
+    [data-reveal-stagger].is-visible > *:nth-child(6) { transition-delay: 0.5s; }
+    [data-reveal-stagger].is-visible > *:nth-child(7) { transition-delay: 0.6s; }
+    [data-reveal-stagger].is-visible > *:nth-child(8) { transition-delay: 0.7s; }
+
+    /* Bracket slide-in: left bracket from left, right bracket from right */
+    [data-reveal-bracket-left] {
+      opacity: 0;
+      transform: translateX(-90%);
+      transition:
+        opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    [data-reveal-bracket-left].is-visible { opacity: 1; transform: translateX(0); }
+
+    [data-reveal-bracket-right] {
+      opacity: 0;
+      transform: translateX(90%);
+      transition:
+        opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    [data-reveal-bracket-right].is-visible { opacity: 1; transform: translateX(0); }
+
+    /* Image hover scale */
+    [data-hover-scale] {
+      overflow: hidden;
+    }
+    [data-hover-scale] img {
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    [data-hover-scale]:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Image reveal with clip */
+    [data-reveal-image] {
+      overflow: hidden;
+    }
+    [data-reveal-image] img {
+      opacity: 0;
+      transform: scale(1.15);
+      transition:
+        opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    [data-reveal-image].is-visible img {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Hero name — per-letter clip reveal */
+    .hero-letter {
+      display: inline-block;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(100%);
+      animation: letterReveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: calc(0.8s + var(--i) * 0.07s);
+    }
+    @keyframes letterReveal {
+      0% { opacity: 0; transform: translateY(100%); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Thin line that draws in from center */
+    .hero-line {
+      width: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.3);
+      animation: lineExpand 1.2s cubic-bezier(0.22, 1, 0.36, 1) 2s forwards;
+    }
+    @keyframes lineExpand {
+      0% { width: 0; }
+      100% { width: 120px; }
+    }
+
+    /* Subtitle fade */
+    .hero-subtitle {
+      opacity: 0;
+      transform: translateY(8px);
+      animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 2.4s forwards;
+    }
+
+    /* Hero content fade-up on load */
+    .hero-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroFadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+    }
+    .hero-reveal-delay {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroFadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+    }
+    @keyframes heroFadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Nav link hover transitions */
+    header a {
+      transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Footer link hover transitions */
+    footer a {
+      transition: color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="sticky top-0 left-0 w-full z-50 bg-white" style="padding: 0 var(--margin);">
+    <div class="flex items-end justify-between w-full" style="height: 72px; padding-bottom: 12px;">
+      <!-- Logo -->
+      <a href="index.html" class="flex-shrink-0">
+        <img src="assets/global/logo.png" alt="Rojdi Alici" style="height: 28px; width: auto;" />
+      </a>
+      <!-- Nav links -->
+      <div class="flex items-end gap-x-1 body-16">
+        <a href="#works" class="hover:opacity-25 transition-opacity" style="scroll-behavior: smooth;">Work</a>
+      </div>
+      <!-- Time + Location -->
+      <div class="flex items-end gap-x-12 body-16">
+        <span class="uppercase opacity-25" id="header-clock">--:-- --</span>
+        <span>Seoul, KR</span>
+      </div>
+      <!-- Contact -->
+      <div class="body-16">
+        <a href="contact.html" class="hover:opacity-25 transition-opacity">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO / COVER ===== -->
+  <section class="relative w-full h-screen">
+    <div class="absolute inset-0 overflow-hidden">
+      <canvas id="hero-shader" class="w-full h-full"></canvas>
+    </div>
+    <!-- Centered name — per-letter stagger reveal -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+      <div class="flex gap-[0.15em] hero-word" style="font-size: clamp(36px, 7vw, 100px); font-weight: 300; letter-spacing: 0.25em; color: white;">
+        <span class="hero-letter" style="--i:0">R</span>
+        <span class="hero-letter" style="--i:1">O</span>
+        <span class="hero-letter" style="--i:2">J</span>
+        <span class="hero-letter" style="--i:3">D</span>
+        <span class="hero-letter" style="--i:4">I</span>
+      </div>
+      <div class="flex gap-[0.15em] hero-word" style="font-size: clamp(36px, 7vw, 100px); font-weight: 300; letter-spacing: 0.25em; color: white; margin-top: 0.05em;">
+        <span class="hero-letter" style="--i:6">A</span>
+        <span class="hero-letter" style="--i:7">L</span>
+        <span class="hero-letter" style="--i:8">I</span>
+        <span class="hero-letter" style="--i:9">C</span>
+        <span class="hero-letter" style="--i:10">I</span>
+      </div>
+      <!-- Thin divider line that draws in -->
+      <div class="hero-line" style="margin-top: 20px;"></div>
+      <!-- Subtitle fades in last -->
+      <div class="hero-subtitle" style="margin-top: 14px; font-size: 13px; letter-spacing: 0.35em; color: rgba(255,255,255,0.5); text-transform: uppercase; font-weight: 300;">Architecture &amp; Design</div>
+    </div>
+    <!-- Bottom overlay content -->
+    <div class="absolute bottom-0 left-0 w-full text-white" style="padding: 0 var(--margin) var(--margin);">
+      <div class="grid-w items-end" style="padding-left:0;padding-right:0;">
+        <div class="col-span-2 body-16 opacity-50 hero-reveal">[Scroll down]</div>
+        <div class="col-span-4 col-start-10 body-20 hero-reveal-delay">
+          Driven by History, Centered on Context, Embracing Culture
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / STUDIO ===== -->
+  <section class="relative" style="padding: var(--margin) 0;">
+    <div class="corner-tl"></div>
+    <div class="corner-tr"></div>
+    <div class="grid-w">
+      <!-- Left sticky image -->
+      <div class="col-span-2" style="padding-left: 50px; padding-top: 50px;">
+        <div class="sticky top-20">
+          <div class="relative w-full" data-reveal-image data-hover-scale style="padding-top: 120%;">
+            <img src="assets/global/logo.png" alt="RA" class="absolute inset-0 w-full h-full object-contain" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Big statement -->
+      <div class="col-span-12 mt-10 mb-24">
+        <div style="display: flex;">
+          <div style="flex: 0 0 25%; min-width: 25%;"></div>
+          <div data-reveal>
+            <h2 class="italic" style="font-family: 'Playfair Display', Georgia, serif; font-size: 96px; line-height: 1.05; margin-bottom: 24px; color: #c5a467;">An expression of values</h2>
+            <p style="font-size: 45px; line-height: 1.15;">Architecture that asks how space shapes community, memory, and human experience — spanning civic hubs, cultural institutions, and intimate residential experiments.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-content row -->
+      <div class="col-start-4 col-end-6 body-16" data-reveal>
+        Architecture<br>&amp; Interior Design
+      </div>
+      <div class="col-start-7 col-end-11 body-16" data-reveal style="padding-bottom: 150px;">
+        <p>Six projects across residential, civic, cultural, and interior typologies</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SELECTED WORKS ===== -->
+  <section id="works" class="overflow-hidden" style="padding-bottom: 150px;">
+    <!-- Section header -->
+    <div class="flex justify-between items-center body-16 uppercase" data-reveal style="padding: 0 var(--margin) 150px;">
+      <h2>Selected Works</h2>
+      <span class="text-mist">02</span>
+    </div>
+
+    <!-- Work Items -->
+    <div class="flex flex-col" style="gap: 52px;">
+
+      <!-- Work Item 1: Haus der Jugend -->
+      <a href="haus-der-jugend.html" class="block w-full">
+        <div class="flex flex-col" style="gap: 52px;">
+          <div class="relative w-full flex justify-center items-center" style="padding: 0 var(--margin);">
+            <div class="absolute top-1/2 left-[16px] h-px bg-black" style="width: 48px; transform: translateY(-12px);"></div>
+            <div class="absolute top-1/2 right-[16px] h-px bg-black" style="width: 48px; transform: translateY(-12px);"></div>
+            <div class="flex-1 flex justify-end body-100" data-reveal-bracket-left>[</div>
+            <h3 class="works-item-title text-center body-100 px-2" data-reveal>Haus der Jugend</h3>
+            <div class="flex-1 body-100" data-reveal-bracket-right>]</div>
+          </div>
+          <div class="grid-w" style="margin-top: -30px;">
+            <div class="col-start-4 col-end-10">
+              <div class="relative w-full" data-reveal-image data-hover-scale style="overflow: hidden;">
+                <img src="assets/haus der jugend/render/main render.png" alt="Haus der Jugend" class="w-full h-auto" />
+              </div>
+              <div class="flex justify-between body-16 mt-5" data-reveal>
+                <span>Student Housing</span>
+                <span>2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Work Item 2: Garden of Knowledge -->
+      <a href="garden-of-knowledge.html" class="block w-full">
+        <div class="flex flex-col" style="gap: 52px;">
+          <div class="relative w-full flex justify-center items-center" style="padding: 0 var(--margin);">
+            <div class="absolute top-1/2 left-[16px] h-px bg-black" style="width: 48px; transform: translateY(-12px);"></div>
+            <div class="absolute top-1/2 right-[16px] h-px bg-black" style="width: 48px; transform: translateY(-12px);"></div>
+            <div class="flex-1 flex justify-end body-100" data-reveal-bracket-left>[</div>
+            <h3 class="works-item-title text-center body-100 px-2" data-reveal>Garden of Knowledge</h3>
+            <div class="flex-1 body-100" data-reveal-bracket-right>]</div>
+          </div>
+          <div class="grid-w" style="margin-top: -30px;">
+            <div class="col-start-4 col-end-10">
+              <div class="relative w-full" data-reveal-image data-hover-scale style="overflow: hidden;">
+                <img src="assets/garden of knowledge/render/main render.png" alt="Garden of Knowledge" class="w-full h-auto" />
+              </div>
+              <div class="flex justify-between body-16 mt-5" data-reveal>
+                <span>Library</span>
+                <span>2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Work Item 3: Green Maze -->
+      <a href="green-maze.html" class="block w-full">
+        <div class="flex flex-col" style="gap: 52px;">
+          <div class="relative w-full flex justify-center items-center" style="padding: 0 var(--margin);">
+            <div class="absolute top-1/2 left-[16px] h-px bg-black" style="width: 48px; transform: translateY(-12px);"></div>
+            <div class="absolute top-1/2 right-[16px] h-px bg-black" style="width: 48px; transform: translateY(-12px);"></div>
+            <div class="flex-1 flex justify-end body-100" data-reveal-bracket-left>[</div>
+            <h3 class="works-item-title text-center body-100 px-2" data-reveal>Green Maze</h3>
+            <div class="flex-1 body-100" data-reveal-bracket-right>]</div>
+          </div>
+          <div class="grid-w" style="margin-top: -30px;">
+            <div class="col-start-4 col-end-10">
+              <div class="relative w-full" data-reveal-image data-hover-scale style="overflow: hidden;">
+                <img src="assets/green maze/render/main render.jpeg" alt="Green Maze" class="w-full h-auto" />
+              </div>
+              <div class="flex justify-between body-16 mt-5" data-reveal>
+                <span>Residential</span>
+                <span>2022</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Work Item 4: Die Keramik Werkstatt -->
+      <a href="die-keramik-werkstatt.html" class="block w-full">
+        <div class="flex flex-col" style="gap: 52px;">
+          <div class="relative w-full flex justify-center items-center" style="padding: 0 var(--margin);">
+            <div class="absolute top-1/2 left-[16px] h-px bg-black" style="width: 48px; transform: translateY(-12px);"></div>
+            <div class="absolute top-1/2 right-[16px] h-px bg-black" style="width: 48px; transform: translateY(-12px);"></div>
+            <div class="flex-1 flex justify-end body-100" data-reveal-bracket-left>[</div>
+            <h3 class="works-item-title text-center body-100 px-2" data-reveal>Die Keramik Werkstatt</h3>
+            <div class="flex-1 body-100" data-reveal-bracket-right>]</div>
+          </div>
+          <div class="grid-w" style="margin-top: -30px;">
+            <div class="col-start-4 col-end-10">
+              <div class="relative w-full" data-reveal-image data-hover-scale style="overflow: hidden;">
+                <img src="assets/die keramik werkstatt/render/main render.jpeg" alt="Die Keramik Werkstatt" class="w-full h-auto" />
+              </div>
+              <div class="flex justify-between body-16 mt-5" data-reveal>
+                <span>Cultural</span>
+                <span>2022</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Work Item 5: Museum Lucis -->
+      <a href="museum-lucis.html" class="block w-full">
+        <div class="flex flex-col" style="gap: 52px;">
+          <div class="relative w-full flex justify-center items-center" style="padding: 0 var(--margin);">
+            <div class="absolute top-1/2 left-[16px] h-px bg-black" style="width: 48px; transform: translateY(-12px);"></div>
+            <div class="absolute top-1/2 right-[16px] h-px bg-black" style="width: 48px; transform: translateY(-12px);"></div>
+            <div class="flex-1 flex justify-end body-100" data-reveal-bracket-left>[</div>
+            <h3 class="works-item-title text-center body-100 px-2" data-reveal>Museum Lucis</h3>
+            <div class="flex-1 body-100" data-reveal-bracket-right>]</div>
+          </div>
+          <div class="grid-w" style="margin-top: -30px;">
+            <div class="col-start-4 col-end-10">
+              <div class="relative w-full" data-reveal-image data-hover-scale style="overflow: hidden;">
+                <img src="assets/museum lucis/render/main render.png" alt="Museum Lucis" class="w-full h-auto" />
+              </div>
+              <div class="flex justify-between body-16 mt-5" data-reveal>
+                <span>Museum</span>
+                <span>2021</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Work Item 6: Interior Design -->
+      <a href="interior-design.html" class="block w-full">
+        <div class="flex flex-col" style="gap: 52px;">
+          <div class="relative w-full flex justify-center items-center" style="padding: 0 var(--margin);">
+            <div class="absolute top-1/2 left-[16px] h-px bg-black" style="width: 48px; transform: translateY(-12px);"></div>
+            <div class="absolute top-1/2 right-[16px] h-px bg-black" style="width: 48px; transform: translateY(-12px);"></div>
+            <div class="flex-1 flex justify-end body-100" data-reveal-bracket-left>[</div>
+            <h3 class="works-item-title text-center body-100 px-2" data-reveal>Interior Design</h3>
+            <div class="flex-1 body-100" data-reveal-bracket-right>]</div>
+          </div>
+          <div class="grid-w" style="margin-top: -30px;">
+            <div class="col-start-4 col-end-10">
+              <div class="relative w-full" data-reveal-image data-hover-scale style="overflow: hidden;">
+                <img src="assets/interior design/project one interior design studio/거실.jpg" alt="Interior Design" class="w-full h-auto" />
+              </div>
+              <div class="flex justify-between body-16 mt-5" data-reveal>
+                <span>Interior</span>
+                <span>2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="flex flex-col">
+    <!-- Upper footer -->
+    <div class="grid-w bg-white" style="padding-top: 100px; padding-bottom: var(--margin);">
+      <div class="col-span-5" data-reveal>
+        <a href="contact.html" class="link-underline text-black body-36">Contact me</a>
+      </div>
+      <div class="col-start-10 col-end-13 flex items-end body-16">
+        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top>Back to top</div>
+      </div>
+    </div>
+
+    <!-- Bottom footer with logo -->
+    <div class="bg-black text-white" style="padding: var(--margin);">
+      <div class="w-full mb-5 font-semibold tracking-[0.12em] uppercase" style="font-size: clamp(48px, 8vw, 120px); line-height: 1;">ROJDI ALICI</div>
+      <div class="flex justify-between body-16 opacity-50">
+        <span>All rights reserved<br>&copy; Rojdi Alici 2025</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL REVEAL JS ===== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // Single observer for all reveal types
+      var observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -80px 0px',
+        threshold: 0.15
+      };
+
+      function onIntersect(entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }
+
+      var observer = new IntersectionObserver(onIntersect, observerOptions);
+
+      // Observe all reveal elements
+      var selectors = [
+        '[data-reveal]',
+        '[data-reveal-stagger]',
+        '[data-reveal-bracket-left]',
+        '[data-reveal-bracket-right]',
+        '[data-reveal-image]'
+      ];
+
+      selectors.forEach(function (sel) {
+        document.querySelectorAll(sel).forEach(function (el) {
+          observer.observe(el);
+        });
+      });
+
+      // Live clock in header — Seoul, Korea (Asia/Seoul)
+      function updateClock() {
+        var now = new Date();
+        var parts = now.toLocaleString('en-US', {
+          timeZone: 'Asia/Seoul',
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true
+        }).toLowerCase().split(' ');
+        var clockEl = document.getElementById('header-clock');
+        if (clockEl) clockEl.textContent = parts.join(' ');
+      }
+      updateClock();
+      setInterval(updateClock, 10000);
+
+      // Back to top
+      var backBtn = document.querySelector('[data-back-to-top]');
+      if (backBtn) {
+        backBtn.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+
+  <!-- ===== HERO MESH GRADIENT SHADER ===== -->
+  <script>
+    (function () {
+      'use strict';
+
+      var canvas = document.getElementById('hero-shader');
+      if (!canvas) return;
+
+      var gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      if (!gl) { canvas.style.background = '#0a0604'; return; }
+
+      var vsSource = [
+        'attribute vec2 a_position;',
+        'varying vec2 v_uv;',
+        'void main(){',
+        '  v_uv = a_position * 0.5 + 0.5;',
+        '  gl_Position = vec4(a_position, 0.0, 1.0);',
+        '}'
+      ].join('\n');
+
+      // Mesh gradient: animated color spots on sinusoidal trajectories
+      // with organic distortion, swirl, and grain — matching Paper Design style
+      var fsSource = [
+        'precision highp float;',
+        'varying vec2 v_uv;',
+        'uniform float u_time;',
+        'uniform vec2 u_resolution;',
+        '',
+        '// Value noise for grain',
+        'float hash(vec2 p) {',
+        '  return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);',
+        '}',
+        'float vnoise(vec2 p) {',
+        '  vec2 i = floor(p); vec2 f = fract(p);',
+        '  f = f * f * (3.0 - 2.0 * f);',
+        '  float a = hash(i); float b = hash(i + vec2(1,0));',
+        '  float c = hash(i + vec2(0,1)); float d = hash(i + vec2(1,1));',
+        '  return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);',
+        '}',
+        '',
+        '// Spot position: sinusoidal trajectory per spot',
+        'vec2 getSpotPos(float id, float t) {',
+        '  float a1 = 1.3 + id * 0.7;',
+        '  float a2 = 0.9 + id * 0.5;',
+        '  float p1 = id * 2.17 + 0.5;',
+        '  float p2 = id * 1.73 + 1.0;',
+        '  return vec2(',
+        '    0.5 + 0.35 * sin(t * a1 * 0.3 + p1),',
+        '    0.5 + 0.35 * cos(t * a2 * 0.3 + p2)',
+        '  );',
+        '}',
+        '',
+        '// Organic distortion field',
+        'vec2 distort(vec2 uv, float t) {',
+        '  float distStr = 0.12;',
+        '  float dx = sin(uv.y * 4.0 + t * 0.5) * distStr;',
+        '  float dy = cos(uv.x * 4.0 + t * 0.4) * distStr;',
+        '  dx += sin(uv.x * 2.5 - t * 0.3) * distStr * 0.5;',
+        '  dy += cos(uv.y * 3.0 - t * 0.35) * distStr * 0.5;',
+        '  return uv + vec2(dx, dy);',
+        '}',
+        '',
+        '// Swirl transformation',
+        'vec2 swirl(vec2 uv, float t) {',
+        '  vec2 center = vec2(0.5);',
+        '  vec2 d = uv - center;',
+        '  float r = length(d);',
+        '  float angle = 0.3 * exp(-r * 2.5) * sin(t * 0.2);',
+        '  float s = sin(angle); float c = cos(angle);',
+        '  return center + vec2(c * d.x - s * d.y, s * d.x + c * d.y);',
+        '}',
+        '',
+        'void main() {',
+        '  vec2 uv = v_uv;',
+        '  float aspect = u_resolution.x / u_resolution.y;',
+        '  float t = u_time;',
+        '',
+        '  // Apply distortion and swirl',
+        '  uv = distort(uv, t);',
+        '  uv = swirl(uv, t);',
+        '',
+        '  // Correct for aspect ratio in distance calcs',
+        '  vec2 uvA = vec2(uv.x * aspect, uv.y);',
+        '',
+        '  // 5 color spots: black, dark brown, warm brown, gold, white',
+        '  vec3 colors[5];',
+        '  colors[0] = vec3(0.0, 0.0, 0.0);',
+        '  colors[1] = vec3(0.54, 0.27, 0.07);',
+        '  colors[2] = vec3(1.0, 1.0, 1.0);',
+        '  colors[3] = vec3(0.24, 0.15, 0.09);',
+        '  colors[4] = vec3(0.36, 0.25, 0.22);',
+        '',
+        '  // Background',
+        '  vec3 col = vec3(0.0);',
+        '  float totalWeight = 0.0;',
+        '',
+        '  // Each color has multiple soft spots moving on unique paths',
+        '  for (int c = 0; c < 5; c++) {',
+        '    for (int s = 0; s < 3; s++) {',
+        '      float id = float(c) * 3.0 + float(s);',
+        '      vec2 pos = getSpotPos(id, t);',
+        '      vec2 posA = vec2(pos.x * aspect, pos.y);',
+        '',
+        '      float dist = length(uvA - posA);',
+        '',
+        '      // Soft radial falloff — large, blobby spots',
+        '      float radius = 0.35 + 0.15 * sin(t * 0.2 + id);',
+        '      float spot = exp(-dist * dist / (radius * radius));',
+        '',
+        '      col += colors[c] * spot;',
+        '      totalWeight += spot;',
+        '    }',
+        '  }',
+        '',
+        '  // Normalize',
+        '  if (totalWeight > 0.001) col /= totalWeight;',
+        '',
+        '  // Grain overlay',
+        '  float grain = vnoise(gl_FragCoord.xy * 1.5 + t * 50.0);',
+        '  grain = (grain - 0.5) * 0.08;',
+        '  col += grain;',
+        '',
+        '  gl_FragColor = vec4(col, 1.0);',
+        '}'
+      ].join('\n');
+
+      function createShader(type, source) {
+        var shader = gl.createShader(type);
+        gl.shaderSource(shader, source);
+        gl.compileShader(shader);
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+          console.error(gl.getShaderInfoLog(shader));
+          gl.deleteShader(shader);
+          return null;
+        }
+        return shader;
+      }
+
+      var vs = createShader(gl.VERTEX_SHADER, vsSource);
+      var fs = createShader(gl.FRAGMENT_SHADER, fsSource);
+      if (!vs || !fs) { canvas.style.background = '#0a0604'; return; }
+
+      var program = gl.createProgram();
+      gl.attachShader(program, vs);
+      gl.attachShader(program, fs);
+      gl.linkProgram(program);
+      if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+        canvas.style.background = '#0a0604'; return;
+      }
+
+      gl.useProgram(program);
+
+      var buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, -1,1, 1,-1, 1,1]), gl.STATIC_DRAW);
+
+      var aPos = gl.getAttribLocation(program, 'a_position');
+      gl.enableVertexAttribArray(aPos);
+      gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+      var uTime = gl.getUniformLocation(program, 'u_time');
+      var uRes = gl.getUniformLocation(program, 'u_resolution');
+
+      function resize() {
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = canvas.clientWidth * dpr;
+        canvas.height = canvas.clientHeight * dpr;
+        gl.viewport(0, 0, canvas.width, canvas.height);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      var startTime = performance.now();
+      var rafId;
+
+      function render() {
+        var t = (performance.now() - startTime) * 0.001;
+        gl.uniform1f(uTime, t);
+        gl.uniform2f(uRes, canvas.width, canvas.height);
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
+        rafId = requestAnimationFrame(render);
+      }
+
+      var heroSection = canvas.closest('section');
+      var heroObserver = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) { if (!rafId) render(); }
+        else { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } }
+      }, { threshold: 0 });
+      heroObserver.observe(heroSection);
+    })();
+  </script>
+
+</body>
+</html>
