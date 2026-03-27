@@ -87,7 +87,14 @@
       <a href="index.html" class="flex-shrink-0">
         <img src="assets/global/logo.png" alt="Rojdi Alici" style="height: 28px; width: auto;" />
       </a>
-      <a href="index.html" class="body-16 hover:opacity-25">Back</a>
+      <div class="flex items-center gap-8 body-16">
+  <a href="index.html" class="hover:opacity-25 transition-opacity" data-kr="뒤로">Back</a>
+  <div class="flex items-center gap-1 body-14">
+    <button data-lang-btn="en" style="opacity:1;cursor:pointer;background:none;border:none;font:inherit;padding:0;" onclick="setLang('en')">EN</button>
+    <span class="opacity-25">|</span>
+    <button data-lang-btn="kr" style="opacity:0.25;cursor:pointer;background:none;border:none;font:inherit;padding:0;" onclick="setLang('kr')">KR</button>
+  </div>
+</div>
     </div>
   </header>
 
@@ -99,7 +106,7 @@
         <h1 class="body-72 font-light">Haus der Jugend</h1>
       </div>
       <div class="col-start-9 col-end-13 flex flex-col justify-end hero-reveal hero-reveal-d1">
-        <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;">Student Housing</div>
+        <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;" data-kr="학생 주거">Student Housing</div>
         <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;">Graz, Austria</div>
         <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;">2024</div>
         <div class="body-14 text-mist uppercase tracking-wider">Completed</div>
@@ -114,24 +121,24 @@
     <!-- 3. DESCRIPTION + INFO GRID -->
     <section class="grid-w" style="padding-top: 80px; padding-bottom: 80px;">
       <div class="col-span-7" data-reveal>
-        <p class="body-20 font-light" style="color: #000;">To meet the need for both affordable student housing and shared campus facilities, this project organizes its functions by floor. The ground level is designed as an open, public base containing a caf&eacute;, workshops, and a gym for all students to use. Above this base, the building holds the private residential floors.</p>
-        <p class="body-20 font-light" style="margin-top: 24px; color: #000;">This clear separation of spaces, based on the real needs of students, creates a balance between group activity and private life. The result is a complete environment that supports all aspects of being a student. The building's design is straightforward and practical, with a visible structure and internal systems chosen for durability and easy upkeep.</p>
+        <p class="body-20 font-light" style="color: #000;" data-kr="저렴한 학생 주거와 공유 캠퍼스 시설의 필요를 충족하기 위해, 이 프로젝트는 층별로 기능을 구성합니다. 1층은 카페, 워크숍, 체육관을 갖춘 개방적인 공공 공간으로 설계되었으며, 그 위로 개인 주거 층이 위치합니다.">To meet the need for both affordable student housing and shared campus facilities, this project organizes its functions by floor. The ground level is designed as an open, public base containing a caf&eacute;, workshops, and a gym for all students to use. Above this base, the building holds the private residential floors.</p>
+        <p class="body-20 font-light" style="margin-top: 24px; color: #000;" data-kr="학생들의 실제 필요에 기반한 이 명확한 공간 분리는 그룹 활동과 개인 생활 사이의 균형을 만들어냅니다. 그 결과 학생 생활의 모든 측면을 지원하는 완전한 환경이 탄생했습니다. 건물의 디자인은 직관적이고 실용적이며, 내구성과 쉬운 유지 관리를 위한 구조와 시스템을 갖추고 있습니다.">This clear separation of spaces, based on the real needs of students, creates a balance between group activity and private life. The result is a complete environment that supports all aspects of being a student. The building's design is straightforward and practical, with a visible structure and internal systems chosen for durability and easy upkeep.</p>
       </div>
       <div class="col-start-9 col-end-13" data-reveal>
         <div class="info-row flex justify-between body-14">
-          <span class="text-mist uppercase tracking-wider">Country</span>
-          <span>Austria</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="국가">Country</span>
+          <span data-kr="오스트리아">Austria</span>
         </div>
         <div class="info-row flex justify-between body-14">
-          <span class="text-mist uppercase tracking-wider">Client</span>
-          <span>Academic</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="클라이언트">Client</span>
+          <span data-kr="학술">Academic</span>
         </div>
         <div class="info-row flex justify-between body-14">
-          <span class="text-mist uppercase tracking-wider">Year</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="연도">Year</span>
           <span>2024</span>
         </div>
         <div class="info-row flex justify-between body-14" style="border-bottom: 1px solid #e5e5e5;">
-          <span class="text-mist uppercase tracking-wider">Architecture</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="건축">Architecture</span>
           <span>Rojdi Alici</span>
         </div>
       </div>
@@ -139,7 +146,7 @@
 
     <!-- 4. QUOTE ON DARK IMAGE -->
     <section style="height: 600px; background: #1a1612; display: flex; align-items: center; justify-content: center; padding: 0 var(--margin);">
-        <p class="text-white text-center body-36 font-light" data-reveal style="font-family: 'Playfair Display', serif; font-style: italic; max-width: 800px;">&ldquo;A building that organizes community by elevation &mdash; public life at ground, private life above.&rdquo;</p>
+        <p class="text-white text-center body-36 font-light" data-reveal style="font-family: 'Playfair Display', serif; font-style: italic; max-width: 800px;" data-kr="&ldquo;높이에 따라 커뮤니티를 조직하는 건물. 1층은 공공 생활, 위층은 사적 생활.&rdquo;">&ldquo;A building that organizes community by elevation. Public life at ground, private life above.&rdquo;</p>
     </section>
 
     <!-- RENDER + SKETCH SIDE BY SIDE -->
@@ -169,7 +176,7 @@
     <!-- TEXT ABOUT VERTICAL ORGANIZATION -->
     <section class="grid-w" style="padding-top: 40px; padding-bottom: 80px;">
       <div class="col-start-4 col-end-10" data-reveal>
-        <p class="body-20 font-light">The vertical organization concept drives the entire design. Public program occupies the ground floor, creating an active, permeable base. Above, the residential floors step back to provide privacy and daylight. Each level responds to a specific need, giving the building a legible logic from the outside in.</p>
+        <p class="body-20 font-light" data-kr="수직 조직 개념이 전체 디자인을 이끕니다. 공공 프로그램이 1층을 차지하여 활발하고 투과적인 기반을 만듭니다. 그 위의 주거 층은 프라이버시와 채광을 위해 뒤로 물러납니다. 각 층은 특정 필요에 부응하여 건물에 외부에서 내부까지 읽을 수 있는 논리를 부여합니다.">The vertical organization concept drives the entire design. Public program occupies the ground floor, creating an active, permeable base. Above, the residential floors step back to provide privacy and daylight. Each level responds to a specific need, giving the building a legible logic from the outside in.</p>
       </div>
     </section>
 
@@ -187,7 +194,7 @@
     <section style="padding-top: 80px; padding-bottom: 80px;">
       <div class="grid-w" data-reveal>
         <div class="col-span-12">
-          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 40px;">Site Analysis</p>
+          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 40px;" data-kr="현장 분석">Site Analysis</p>
         </div>
         <div class="col-span-12 grid grid-cols-5" style="gap: var(--gutter);">
           <div>
@@ -211,7 +218,7 @@
 
     <!-- 9. NEXT PROJECT -->
     <section class="flex items-center justify-center" style="padding: 100px 0;">
-      <a href="garden-of-knowledge.html" class="body-48 font-light text-black" style="transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);" onmouseover="this.style.opacity='0.4'" onmouseout="this.style.opacity='1'">Next: Garden of Knowledge &rarr;</a>
+      <a href="garden-of-knowledge.html" class="body-48 font-light text-black" style="transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);" onmouseover="this.style.opacity='0.4'" onmouseout="this.style.opacity='1'" data-kr="다음: Garden of Knowledge &rarr;">Next: Garden of Knowledge &rarr;</a>
     </section>
 
   </main>
@@ -225,16 +232,16 @@
   <footer class="flex flex-col">
     <div class="grid-w bg-white" style="padding-top: 60px; padding-bottom: var(--margin);">
       <div class="col-span-5" data-reveal>
-        <a href="contact.html" class="link-underline text-black body-36">Contact me</a>
+        <a href="contact.html" class="link-underline text-black body-36" data-kr="연락하기">Contact me</a>
       </div>
       <div class="col-start-10 col-end-13 flex items-end body-16">
-        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top>Back to top</div>
+        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top data-kr="맨 위로">Back to top</div>
       </div>
     </div>
     <div class="bg-black text-white" style="padding: var(--margin);">
       <div class="w-full mb-5 font-semibold tracking-[0.12em] uppercase" style="font-size: clamp(48px, 8vw, 120px); line-height: 1;">ROJDI ALICI</div>
       <div class="flex justify-between body-16 opacity-50">
-        <span>All rights reserved<br>&copy; Rojdi Alici 2025</span>
+        <span data-kr="모든 권리 보유<br>&copy; Rojdi Alici 2025">All rights reserved<br>&copy; Rojdi Alici 2025</span>
       </div>
     </div>
   </footer>
@@ -271,6 +278,23 @@
     }
   })();
   </script>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-kr]').forEach(function(el) {
+    if (!el.dataset.en) el.dataset.en = el.innerHTML;
+    el.innerHTML = lang === 'kr' ? el.dataset.kr : el.dataset.en;
+  });
+  document.querySelectorAll('[data-lang-btn]').forEach(function(btn) {
+    btn.style.opacity = btn.dataset.langBtn === lang ? '1' : '0.25';
+  });
+  localStorage.setItem('lang', lang);
+}
+(function() {
+  var saved = localStorage.getItem('lang');
+  if (saved === 'kr') setLang('kr');
+})();
+</script>
 
 </body>
 </html>

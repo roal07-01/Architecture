@@ -87,7 +87,14 @@
       <a href="index.html" class="flex-shrink-0">
         <img src="assets/global/logo.png" alt="Rojdi Alici" style="height: 28px; width: auto;" />
       </a>
-      <a href="index.html" class="body-16 hover:opacity-25">Back</a>
+      <div class="flex items-center gap-8 body-16">
+  <a href="index.html" class="hover:opacity-25 transition-opacity" data-kr="뒤로">Back</a>
+  <div class="flex items-center gap-1 body-14">
+    <button data-lang-btn="en" style="opacity:1;cursor:pointer;background:none;border:none;font:inherit;padding:0;" onclick="setLang('en')">EN</button>
+    <span class="opacity-25">|</span>
+    <button data-lang-btn="kr" style="opacity:0.25;cursor:pointer;background:none;border:none;font:inherit;padding:0;" onclick="setLang('kr')">KR</button>
+  </div>
+</div>
     </div>
   </header>
 
@@ -99,7 +106,7 @@
         <h1 class="body-72 font-light">Green Maze</h1>
       </div>
       <div class="col-start-9 col-end-13 flex flex-col justify-end hero-reveal hero-reveal-d1">
-        <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;">Residential Module</div>
+        <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;" data-kr="주거 모듈">Residential Module</div>
         <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;">Graz, Austria</div>
         <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;">2022</div>
         <div class="body-14 text-mist uppercase tracking-wider">Completed</div>
@@ -114,25 +121,25 @@
     <!-- 3. DESCRIPTION + INFO GRID -->
     <section class="grid-w" style="padding-top: 100px; padding-bottom: 100px;">
       <div class="col-span-7" data-reveal>
-        <p class="body-20 font-light" style="color: #000;">This project tackles a key question in shared living: How can six different people have privacy without being closed off by solid walls? It offers a solution that isn&rsquo;t just a choice between separate rooms or one big open space, but a comfortable middle ground that helps people live together well.</p>
-        <p class="body-20 font-light" style="margin-top: 24px; color: #000;">The answer is in the design of the space itself, inspired by Japanese architects like Sou Fujimoto. The inside of the module is one large area with many different floor levels, all set at various heights. Each level is designed for a specific purpose, like a quiet corner for reading or a small garden. Short, open stairs connect all these platforms, making it easy to move around.</p>
-        <p class="body-20 font-light" style="margin-top: 24px; color: #000;">This layout lets each resident have their own level, which feels like their own personal spot. Privacy comes from being on a different height, not from being behind a wall. Even though everyone has their own zone, they can still see across the open space and feel part of the larger home. The design feels both separated and connected, helping build a community where people can have their own space and choose when to interact.</p>
+        <p class="body-20 font-light" style="color: #000;" data-kr="이 프로젝트는 공유 생활에서 핵심 질문을 다룹니다: 여섯 명의 다른 사람들이 단단한 벽 없이 어떻게 프라이버시를 가질 수 있을까요? 별도의 방이나 하나의 넓은 공간 사이의 선택이 아닌, 함께 잘 살 수 있도록 도와주는 편안한 중간 지점을 제시합니다.">This project tackles a key question in shared living: How can six different people have privacy without being closed off by solid walls? It offers a solution that isn&rsquo;t just a choice between separate rooms or one big open space, but a comfortable middle ground that helps people live together well.</p>
+        <p class="body-20 font-light" style="margin-top: 24px; color: #000;" data-kr="답은 소우 후지모토와 같은 일본 건축가에서 영감을 받은 공간 디자인 자체에 있습니다. 모듈 내부는 다양한 높이에 설정된 여러 바닥 레벨을 가진 하나의 넓은 공간입니다. 각 레벨은 조용한 독서 코너나 작은 정원과 같은 특정 목적을 위해 설계되었습니다. 짧고 개방된 계단이 모든 플랫폼을 연결합니다.">The answer is in the design of the space itself, inspired by Japanese architects like Sou Fujimoto. The inside of the module is one large area with many different floor levels, all set at various heights. Each level is designed for a specific purpose, like a quiet corner for reading or a small garden. Short, open stairs connect all these platforms, making it easy to move around.</p>
+        <p class="body-20 font-light" style="margin-top: 24px; color: #000;" data-kr="이 레이아웃은 각 거주자가 자신만의 개인 공간처럼 느껴지는 자신만의 레벨을 가질 수 있게 합니다. 프라이버시는 벽 뒤가 아닌 다른 높이에 있는 것에서 옵니다. 모두가 자신만의 영역을 가지고 있지만, 열린 공간을 가로질러 볼 수 있고 더 넓은 집의 일부라고 느낄 수 있습니다. 분리되면서도 연결된 느낌의 디자인으로, 자신만의 공간을 가지면서도 언제 교류할지 선택할 수 있는 커뮤니티를 만들어줍니다.">This layout lets each resident have their own level, which feels like their own personal spot. Privacy comes from being on a different height, not from being behind a wall. Even though everyone has their own zone, they can still see across the open space and feel part of the larger home. The design feels both separated and connected, helping build a community where people can have their own space and choose when to interact.</p>
       </div>
       <div class="col-start-9 col-end-13" data-reveal>
         <div class="info-row flex justify-between body-14">
-          <span class="text-mist uppercase tracking-wider">Country</span>
-          <span>Austria</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="국가">Country</span>
+          <span data-kr="오스트리아">Austria</span>
         </div>
         <div class="info-row flex justify-between body-14">
-          <span class="text-mist uppercase tracking-wider">Client</span>
-          <span>Academic</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="클라이언트">Client</span>
+          <span data-kr="학술">Academic</span>
         </div>
         <div class="info-row flex justify-between body-14">
-          <span class="text-mist uppercase tracking-wider">Year</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="연도">Year</span>
           <span>2022</span>
         </div>
         <div class="info-row flex justify-between body-14" style="border-bottom: 1px solid #e5e5e5;">
-          <span class="text-mist uppercase tracking-wider">Architecture</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="건축">Architecture</span>
           <span>Rojdi Alici</span>
         </div>
       </div>
@@ -140,7 +147,7 @@
 
     <!-- 4. QUOTE ON DARK IMAGE -->
     <section style="height: 600px; background: #1a2118; display: flex; align-items: center; justify-content: center; padding: 0 var(--margin);">
-        <p class="text-white text-center body-36 font-light" data-reveal style="font-family: 'Playfair Display', serif; font-style: italic; max-width: 800px;">&ldquo;Privacy through elevation, not enclosure &mdash; a home you discover vertically.&rdquo;</p>
+        <p class="text-white text-center body-36 font-light" data-reveal style="font-family: 'Playfair Display', serif; font-style: italic; max-width: 800px;" data-kr="&ldquo;벽이 아닌 높이를 통한 프라이버시. 수직으로 발견하는 집.&rdquo;">&ldquo;Privacy through elevation, not enclosure. A home you discover vertically.&rdquo;</p>
     </section>
 
     <!-- RENDER -->
@@ -151,7 +158,7 @@
     <!-- 5. TEXT + DIAGRAM -->
     <section class="grid-w" style="padding-top: 100px; padding-bottom: 100px;">
       <div class="col-span-4 flex items-center" data-reveal>
-        <p class="body-20 font-light">The split-level concept transforms a single volume into a landscape of distinct zones. Instead of dividing the space with walls, changes in floor height create natural boundaries between activities. Each platform becomes a room without edges &mdash; open to the whole yet unmistakably its own. The result is a spatial experience that encourages both solitude and togetherness.</p>
+        <p class="body-20 font-light" data-kr="스플릿 레벨 개념은 하나의 볼륨을 다양한 영역의 풍경으로 변환합니다. 벽으로 공간을 나누는 대신, 바닥 높이의 변화가 활동 사이의 자연스러운 경계를 만들어냅니다. 각 플랫폼은 가장자리 없는 방이 되어, 전체에 열려 있으면서도 분명히 자신만의 공간입니다.">The split-level concept transforms a single volume into a landscape of distinct zones. Instead of dividing the space with walls, changes in floor height create natural boundaries between activities. Each platform becomes a room without edges, open to the whole yet unmistakably its own. The result is a spatial experience that encourages both solitude and togetherness.</p>
       </div>
       <div class="col-start-6 col-end-13" data-reveal-image>
         <img src="assets/green maze/description/24.png" alt="Green Maze description diagram" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
@@ -171,13 +178,13 @@
         <img src="assets/green maze/plans/22.png" alt="Green Maze plan" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
       </div>
       <div class="col-start-9 col-end-13 flex items-center" data-reveal>
-        <p class="body-20 font-light">The plan reveals the influence of Sou Fujimoto&rsquo;s spatial philosophy &mdash; architecture as a series of gradients rather than hard separations. Overlapping platforms and staggered stairs allow sightlines to travel freely, while the varying heights give each zone a sense of enclosure without ever closing it off. The floor plan reads less like a conventional layout and more like a topographic map of shared living.</p>
+        <p class="body-20 font-light" data-kr="이 평면은 소우 후지모토의 공간 철학의 영향을 보여주며, 건축을 단단한 분리가 아닌 일련의 그라디언트로 다룹니다. 겹치는 플랫폼과 엇갈린 계단이 시선을 자유롭게 하며, 다양한 높이가 각 영역에 폐쇄감 없는 둘러싸임을 부여합니다.">The plan reveals the influence of Sou Fujimoto&rsquo;s spatial philosophy, treating architecture as a series of gradients rather than hard separations. Overlapping platforms and staggered stairs allow sightlines to travel freely, while the varying heights give each zone a sense of enclosure without ever closing it off. The floor plan reads less like a conventional layout and more like a topographic map of shared living.</p>
       </div>
     </section>
 
     <!-- 8. NEXT PROJECT -->
     <section class="flex items-center justify-center" style="padding: 100px 0;">
-      <a href="die-keramik-werkstatt.html" class="body-48 font-light text-black" style="transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);" onmouseover="this.style.opacity='0.4'" onmouseout="this.style.opacity='1'">Next: Die Keramik Werkstatt &rarr;</a>
+      <a href="die-keramik-werkstatt.html" class="body-48 font-light text-black" style="transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);" onmouseover="this.style.opacity='0.4'" onmouseout="this.style.opacity='1'" data-kr="다음: Die Keramik Werkstatt &rarr;">Next: Die Keramik Werkstatt &rarr;</a>
     </section>
 
   </main>
@@ -191,16 +198,16 @@
   <footer class="flex flex-col">
     <div class="grid-w bg-white" style="padding-top: 60px; padding-bottom: var(--margin);">
       <div class="col-span-5" data-reveal>
-        <a href="contact.html" class="link-underline text-black body-36">Contact me</a>
+        <a href="contact.html" class="link-underline text-black body-36" data-kr="연락하기">Contact me</a>
       </div>
       <div class="col-start-10 col-end-13 flex items-end body-16">
-        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top>Back to top</div>
+        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top data-kr="맨 위로">Back to top</div>
       </div>
     </div>
     <div class="bg-black text-white" style="padding: var(--margin);">
       <div class="w-full mb-5 font-semibold tracking-[0.12em] uppercase" style="font-size: clamp(48px, 8vw, 120px); line-height: 1;">ROJDI ALICI</div>
       <div class="flex justify-between body-16 opacity-50">
-        <span>All rights reserved<br>&copy; Rojdi Alici 2025</span>
+        <span data-kr="모든 권리 보유<br>&copy; Rojdi Alici 2025">All rights reserved<br>&copy; Rojdi Alici 2025</span>
       </div>
     </div>
   </footer>
@@ -237,6 +244,23 @@
     }
   })();
   </script>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-kr]').forEach(function(el) {
+    if (!el.dataset.en) el.dataset.en = el.innerHTML;
+    el.innerHTML = lang === 'kr' ? el.dataset.kr : el.dataset.en;
+  });
+  document.querySelectorAll('[data-lang-btn]').forEach(function(btn) {
+    btn.style.opacity = btn.dataset.langBtn === lang ? '1' : '0.25';
+  });
+  localStorage.setItem('lang', lang);
+}
+(function() {
+  var saved = localStorage.getItem('lang');
+  if (saved === 'kr') setLang('kr');
+})();
+</script>
 
 </body>
 </html>

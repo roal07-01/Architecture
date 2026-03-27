@@ -264,16 +264,21 @@
       </a>
       <!-- Nav links -->
       <div class="flex items-end gap-x-1 body-16">
-        <a href="#works" class="hover:opacity-25 transition-opacity" style="scroll-behavior: smooth;">Work</a>
+        <a href="#works" class="hover:opacity-25 transition-opacity" style="scroll-behavior: smooth;" data-kr="작품">Work</a>
       </div>
       <!-- Time + Location -->
       <div class="flex items-end gap-x-12 body-16">
         <span class="uppercase opacity-25" id="header-clock">--:-- --</span>
         <span>Seoul, KR</span>
       </div>
-      <!-- Contact -->
-      <div class="body-16">
-        <a href="contact.html" class="hover:opacity-25 transition-opacity">Contact</a>
+      <div class="flex items-center gap-8 body-16">
+        <a href="about.html" class="hover:opacity-25 transition-opacity" data-kr="소개">About</a>
+        <a href="contact.html" class="hover:opacity-25 transition-opacity" data-kr="연락처">Contact</a>
+        <div class="flex items-center gap-1 body-14">
+          <button data-lang-btn="en" style="opacity:1;cursor:pointer;background:none;border:none;font:inherit;padding:0;" onclick="setLang('en')">EN</button>
+          <span class="opacity-25">|</span>
+          <button data-lang-btn="kr" style="opacity:0.25;cursor:pointer;background:none;border:none;font:inherit;padding:0;" onclick="setLang('kr')">KR</button>
+        </div>
       </div>
     </div>
   </header>
@@ -302,13 +307,13 @@
       <!-- Thin divider line that draws in -->
       <div class="hero-line" style="margin-top: 20px;"></div>
       <!-- Subtitle fades in last -->
-      <div class="hero-subtitle" style="margin-top: 14px; font-size: 13px; letter-spacing: 0.35em; color: rgba(255,255,255,0.5); text-transform: uppercase; font-weight: 300;">Architecture &amp; Design</div>
+      <div class="hero-subtitle" style="margin-top: 14px; font-size: 13px; letter-spacing: 0.35em; color: rgba(255,255,255,0.5); text-transform: uppercase; font-weight: 300;" data-kr="건축 &amp; 디자인">Architecture &amp; Design</div>
     </div>
     <!-- Bottom overlay content -->
     <div class="absolute bottom-0 left-0 w-full text-white" style="padding: 0 var(--margin) var(--margin);">
       <div class="grid-w items-end" style="padding-left:0;padding-right:0;">
-        <div class="col-span-2 body-16 opacity-50 hero-reveal">[Scroll down]</div>
-        <div class="col-span-4 col-start-10 body-20 hero-reveal-delay">
+        <div class="col-span-2 body-16 opacity-50 hero-reveal" data-kr="[아래로 스크롤]">[Scroll down]</div>
+        <div class="col-span-4 col-start-10 body-20 hero-reveal-delay" data-kr="역사에 기반하고, 맥락을 중심으로, 문화를 포용하다">
           Driven by History, Centered on Context, Embracing Culture
         </div>
       </div>
@@ -334,8 +339,8 @@
         <div style="display: flex;">
           <div style="flex: 0 0 25%; min-width: 25%;"></div>
           <div data-reveal>
-            <h2 class="italic" style="font-family: 'Playfair Display', Georgia, serif; font-size: 96px; line-height: 1.05; margin-bottom: 24px; color: #c5a467;">An expression of values</h2>
-            <p style="font-size: 45px; line-height: 1.15;">Architecture that asks how space shapes community, memory, and human experience — spanning civic hubs, cultural institutions, and intimate residential experiments.</p>
+            <h2 class="italic" style="font-family: 'Playfair Display', Georgia, serif; font-size: 96px; line-height: 1.05; margin-bottom: 24px; color: #c5a467;" data-kr="가치의 표현">An expression of values</h2>
+            <p style="font-size: 45px; line-height: 1.15;" data-kr="공간이 커뮤니티, 기억, 그리고 인간의 경험을 어떻게 형성하는지 묻는 건축. 시민 허브, 문화 기관, 그리고 친밀한 주거 실험을 아우릅니다.">Architecture that asks how space shapes community, memory, and human experience. Spanning civic hubs, cultural institutions, and intimate residential experiments.</p>
           </div>
         </div>
       </div>
@@ -354,7 +359,7 @@
   <section id="works" class="overflow-hidden" style="padding-bottom: 150px;">
     <!-- Section header -->
     <div class="flex justify-between items-center body-16 uppercase" data-reveal style="padding: 0 var(--margin) 150px;">
-      <h2>Selected Works</h2>
+      <h2 data-kr="주요 작품">Selected Works</h2>
       <span class="text-mist">02</span>
     </div>
 
@@ -377,7 +382,7 @@
                 <img src="assets/haus der jugend/render/main render.png" alt="Haus der Jugend" class="w-full h-auto" />
               </div>
               <div class="flex justify-between body-16 mt-5" data-reveal>
-                <span>Student Housing</span>
+                <span data-kr="학생 주거">Student Housing</span>
                 <span>2024</span>
               </div>
             </div>
@@ -401,7 +406,7 @@
                 <img src="assets/garden of knowledge/render/main render.png" alt="Garden of Knowledge" class="w-full h-auto" />
               </div>
               <div class="flex justify-between body-16 mt-5" data-reveal>
-                <span>Library</span>
+                <span data-kr="도서관">Library</span>
                 <span>2023</span>
               </div>
             </div>
@@ -425,7 +430,7 @@
                 <img src="assets/green maze/render/main render.jpeg" alt="Green Maze" class="w-full h-auto" />
               </div>
               <div class="flex justify-between body-16 mt-5" data-reveal>
-                <span>Residential</span>
+                <span data-kr="주거">Residential</span>
                 <span>2022</span>
               </div>
             </div>
@@ -449,7 +454,7 @@
                 <img src="assets/die keramik werkstatt/render/main render.jpeg" alt="Die Keramik Werkstatt" class="w-full h-auto" />
               </div>
               <div class="flex justify-between body-16 mt-5" data-reveal>
-                <span>Cultural</span>
+                <span data-kr="문화">Cultural</span>
                 <span>2022</span>
               </div>
             </div>
@@ -473,7 +478,7 @@
                 <img src="assets/museum lucis/render/main render.png" alt="Museum Lucis" class="w-full h-auto" />
               </div>
               <div class="flex justify-between body-16 mt-5" data-reveal>
-                <span>Museum</span>
+                <span data-kr="박물관">Museum</span>
                 <span>2021</span>
               </div>
             </div>
@@ -497,7 +502,7 @@
                 <img src="assets/interior design/project one interior design studio/거실.jpg" alt="Interior Design" class="w-full h-auto" />
               </div>
               <div class="flex justify-between body-16 mt-5" data-reveal>
-                <span>Interior</span>
+                <span data-kr="인테리어">Interior</span>
                 <span>2025</span>
               </div>
             </div>
@@ -514,10 +519,10 @@
     <!-- Upper footer -->
     <div class="grid-w bg-white" style="padding-top: 100px; padding-bottom: var(--margin);">
       <div class="col-span-5" data-reveal>
-        <a href="contact.html" class="link-underline text-black body-36">Contact me</a>
+        <a href="contact.html" class="link-underline text-black body-36" data-kr="연락하기">Contact me</a>
       </div>
       <div class="col-start-10 col-end-13 flex items-end body-16">
-        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top>Back to top</div>
+        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top data-kr="맨 위로">Back to top</div>
       </div>
     </div>
 
@@ -525,7 +530,7 @@
     <div class="bg-black text-white" style="padding: var(--margin);">
       <div class="w-full mb-5 font-semibold tracking-[0.12em] uppercase" style="font-size: clamp(48px, 8vw, 120px); line-height: 1;">ROJDI ALICI</div>
       <div class="flex justify-between body-16 opacity-50">
-        <span>All rights reserved<br>&copy; Rojdi Alici 2025</span>
+        <span data-kr="모든 권리 보유<br>&copy; Rojdi Alici 2025">All rights reserved<br>&copy; Rojdi Alici 2025</span>
       </div>
     </div>
   </footer>
@@ -590,6 +595,21 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       }
+    })();
+
+    function setLang(lang) {
+      document.querySelectorAll('[data-kr]').forEach(function(el) {
+        if (!el.dataset.en) el.dataset.en = el.innerHTML;
+        el.innerHTML = lang === 'kr' ? el.dataset.kr : el.dataset.en;
+      });
+      document.querySelectorAll('[data-lang-btn]').forEach(function(btn) {
+        btn.style.opacity = btn.dataset.langBtn === lang ? '1' : '0.25';
+      });
+      localStorage.setItem('lang', lang);
+    }
+    (function() {
+      var saved = localStorage.getItem('lang');
+      if (saved === 'kr') setLang('kr');
     })();
   </script>
 

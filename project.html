@@ -117,7 +117,14 @@
   <header class="sticky top-0 left-0 w-full z-50 bg-white" style="padding: 0 var(--margin);">
     <div class="flex items-end justify-between w-full" style="height: 72px; padding-bottom: 12px;">
       <a href="index.html" class="flex-shrink-0 font-semibold tracking-[0.08em] uppercase hover:opacity-25" style="font-size: 15px; letter-spacing: 0.12em;">ROJDI ALICI</a>
-      <a href="index.html" class="body-16 hover:opacity-25">Back</a>
+      <div class="flex items-center gap-8 body-16">
+        <a href="index.html" class="hover:opacity-25 transition-opacity" data-kr="뒤로">Back</a>
+        <div class="flex items-center gap-1 body-14">
+          <button data-lang-btn="en" style="opacity:1;cursor:pointer;background:none;border:none;font:inherit;padding:0;" onclick="setLang('en')">EN</button>
+          <span class="opacity-25">|</span>
+          <button data-lang-btn="kr" style="opacity:0.25;cursor:pointer;background:none;border:none;font:inherit;padding:0;" onclick="setLang('kr')">KR</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -153,19 +160,19 @@
     <!-- Info grid -->
     <div class="col-start-9 col-end-13 body-16" data-reveal>
       <div class="info-row flex justify-between">
-        <span class="text-mist">Country</span>
+        <span class="text-mist" data-kr="국가">Country</span>
         <span id="info-country">South Korea</span>
       </div>
       <div class="info-row flex justify-between">
-        <span class="text-mist">Client</span>
+        <span class="text-mist" data-kr="클라이언트">Client</span>
         <span id="info-client">Private</span>
       </div>
       <div class="info-row flex justify-between">
-        <span class="text-mist">Year</span>
+        <span class="text-mist" data-kr="연도">Year</span>
         <span id="info-year">2025</span>
       </div>
       <div class="info-row flex justify-between border-b border-[#e5e5e5]" style="padding-bottom: 16px;">
-        <span class="text-mist">Architecture</span>
+        <span class="text-mist" data-kr="건축">Architecture</span>
         <span id="info-arch">Rojdi Alici</span>
       </div>
     </div>
@@ -256,16 +263,16 @@
   <footer class="flex flex-col">
     <div class="grid-w bg-white" style="padding-top: 60px; padding-bottom: var(--margin);">
       <div class="col-span-5" data-reveal>
-        <a href="#" class="link-underline text-black body-36">Contact me</a>
+        <a href="#" class="link-underline text-black body-36" data-kr="연락하기">Contact me</a>
       </div>
       <div class="col-start-10 col-end-13 flex items-end body-16">
-        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top>Back to top</div>
+        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top data-kr="맨 위로">Back to top</div>
       </div>
     </div>
     <div class="bg-black text-white" style="padding: var(--margin);">
       <div class="w-full mb-5 font-semibold tracking-[0.12em] uppercase" style="font-size: clamp(48px, 8vw, 120px); line-height: 1;">ROJDI ALICI</div>
       <div class="flex justify-between body-16 opacity-50">
-        <span>All rights reserved<br>&copy; Rojdi Alici 2025</span>
+        <span data-kr="모든 권리 보유<br>&copy; Rojdi Alici 2025">All rights reserved<br>&copy; Rojdi Alici 2025</span>
       </div>
     </div>
   </footer>
@@ -283,7 +290,7 @@
           location: 'Seoul, South Korea',
           year: '2025',
           status: 'Completed',
-          description: 'A ceramics workshop that celebrates the dialogue between craft and architecture. Raw, tactile materials form spaces where making and inhabiting become inseparable — clay walls, kiln-fired brick, and generous daylight shape an atmosphere of focused creative labour.',
+          description: 'A ceramics workshop that celebrates the dialogue between craft and architecture. Raw, tactile materials form spaces where making and inhabiting become inseparable. Clay walls, kiln-fired brick, and generous daylight shape an atmosphere of focused creative labour.',
           quote: 'Where the act of making is inseparable from the space itself.',
           country: 'South Korea',
           client: 'Private',
@@ -297,7 +304,7 @@
           year: '2025',
           status: 'Completed',
           description: 'A public library and learning garden that dissolves the threshold between reading and landscape. Terraced reading rooms step down into sunken courtyards, blurring the line between interior study and open-air contemplation.',
-          quote: 'Knowledge grows best in the open air — architecture as fertile ground.',
+          quote: 'Knowledge grows best in the open air. Architecture as fertile ground.',
           country: 'South Korea',
           client: 'Seoul Metropolitan Government',
           arch: 'Rojdi Alici',
@@ -309,7 +316,7 @@
           location: 'Yongsan, Seoul',
           year: '2024',
           status: 'Completed',
-          description: 'A residential complex where landscape and dwelling intertwine. Planted walls, elevated walkways, and fragmented volumes create a living labyrinth — residents navigate through gardens rather than corridors, finding privacy within abundance.',
+          description: 'A residential complex where landscape and dwelling intertwine. Planted walls, elevated walkways, and fragmented volumes create a living labyrinth. Residents navigate through gardens rather than corridors, finding privacy within abundance.',
           quote: 'A home you discover by getting beautifully lost.',
           country: 'South Korea',
           client: 'Private',
@@ -335,7 +342,7 @@
           location: 'Bukchon, Seoul',
           year: '2023',
           status: 'Completed',
-          description: 'A museum of light set within a heritage precinct. The building captures, filters, and choreographs natural light through deep reveals, translucent stone screens, and a central oculus — making luminosity itself the permanent collection.',
+          description: 'A museum of light set within a heritage precinct. The building captures, filters, and choreographs natural light through deep reveals, translucent stone screens, and a central oculus, making luminosity itself the permanent collection.',
           quote: 'Light as the only exhibit that never repeats.',
           country: 'South Korea',
           client: 'Cultural Foundation of Korea',
@@ -406,6 +413,23 @@
         });
       }
     })();
+  </script>
+
+  <script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-kr]').forEach(function(el) {
+      if (!el.dataset.en) el.dataset.en = el.innerHTML;
+      el.innerHTML = lang === 'kr' ? el.dataset.kr : el.dataset.en;
+    });
+    document.querySelectorAll('[data-lang-btn]').forEach(function(btn) {
+      btn.style.opacity = btn.dataset.langBtn === lang ? '1' : '0.25';
+    });
+    localStorage.setItem('lang', lang);
+  }
+  (function() {
+    var saved = localStorage.getItem('lang');
+    if (saved === 'kr') setLang('kr');
+  })();
   </script>
 
 </body>

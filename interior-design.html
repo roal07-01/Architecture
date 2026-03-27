@@ -87,7 +87,14 @@
       <a href="index.html" class="flex-shrink-0">
         <img src="assets/global/logo.png" alt="Rojdi Alici" style="height: 28px; width: auto;" />
       </a>
-      <a href="index.html" class="body-16 hover:opacity-25">Back</a>
+      <div class="flex items-center gap-8 body-16">
+        <a href="index.html" class="hover:opacity-25 transition-opacity" data-kr="뒤로">Back</a>
+        <div class="flex items-center gap-1 body-14">
+          <button data-lang-btn="en" style="opacity:1;cursor:pointer;background:none;border:none;font:inherit;padding:0;" onclick="setLang('en')">EN</button>
+          <span class="opacity-25">|</span>
+          <button data-lang-btn="kr" style="opacity:0.25;cursor:pointer;background:none;border:none;font:inherit;padding:0;" onclick="setLang('kr')">KR</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -99,10 +106,10 @@
         <h1 class="body-72 font-light">Interior Design</h1>
       </div>
       <div class="col-start-9 col-end-13 flex flex-col justify-end hero-reveal hero-reveal-d1">
-        <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;">Interior Design</div>
+        <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;" data-kr="인테리어 디자인">Interior Design</div>
         <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;">Seoul, South Korea</div>
         <div class="body-14 text-mist uppercase tracking-wider" style="margin-bottom: 8px;">2025</div>
-        <div class="body-14 text-mist uppercase tracking-wider">Completed</div>
+        <div class="body-14 text-mist uppercase tracking-wider" data-kr="완료">Completed</div>
       </div>
     </section>
 
@@ -114,23 +121,22 @@
     <!-- 3. DESCRIPTION + INFO GRID -->
     <section class="grid-w" style="padding-top: 80px; padding-bottom: 80px;">
       <div class="col-span-7" data-reveal>
-        <p class="body-20 font-light" style="color: #000;">A complete interior transformation of a mid-century apartment. Walls were removed to reveal the original structural rhythm, and a restrained palette of timber, stone, and plaster creates spaces that feel both generous and grounded.</p>
       </div>
       <div class="col-start-9 col-end-13" data-reveal>
         <div class="info-row flex justify-between body-14">
-          <span class="text-mist uppercase tracking-wider">Country</span>
-          <span>South Korea</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="국가">Country</span>
+          <span data-kr="대한민국">South Korea</span>
         </div>
         <div class="info-row flex justify-between body-14">
-          <span class="text-mist uppercase tracking-wider">Client</span>
-          <span>Private</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="클라이언트">Client</span>
+          <span data-kr="개인">Private</span>
         </div>
         <div class="info-row flex justify-between body-14">
-          <span class="text-mist uppercase tracking-wider">Year</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="연도">Year</span>
           <span>2025</span>
         </div>
         <div class="info-row flex justify-between body-14" style="border-bottom: 1px solid #e5e5e5;">
-          <span class="text-mist uppercase tracking-wider">Architecture</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="건축">Architecture</span>
           <span>Rojdi Alici</span>
         </div>
       </div>
@@ -149,7 +155,7 @@
     <!-- 5. QUOTE SECTION -->
     <section style="background: #fff; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; padding: 100px var(--margin);">
       <div class="flex items-center justify-center">
-        <p class="text-black text-center body-36 font-light" data-reveal style="font-family: 'Playfair Display', serif; font-style: italic; max-width: 800px;">&ldquo;Stripping back to reveal the architecture that was always there.&rdquo;</p>
+        <p class="text-black text-center body-36 font-light" data-reveal style="font-family: 'Playfair Display', serif; font-style: italic; max-width: 800px;" data-kr="&ldquo;항상 그곳에 있던 건축을 드러내기 위해 벗겨내다.&rdquo;">&ldquo;Stripping back to reveal the architecture that was always there.&rdquo;</p>
       </div>
     </section>
 
@@ -157,7 +163,7 @@
     <section style="padding-top: 80px; padding-bottom: 80px;">
       <div class="grid-w">
         <div class="col-span-12" data-reveal>
-          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 40px;">Spaces</p>
+          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 40px;" data-kr="공간">Spaces</p>
         </div>
       </div>
       <div class="grid-w">
@@ -166,38 +172,38 @@
           <div>
             <img src="assets/interior design/project one interior design studio/거실.jpg" alt="Living Room" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
           </div>
-          <p class="body-14 text-mist uppercase tracking-wider" style="margin-top: 16px;">Living Room</p>
+          <p class="body-14 text-mist uppercase tracking-wider" style="margin-top: 16px;" data-kr="거실">Living Room</p>
         </div>
         <div class="col-span-4 cursor-pointer" data-reveal-image data-hover-scale data-plan-zoom style="transition-delay: 0.1s;">
           <div>
             <img src="assets/interior design/project one interior design studio/안방.jpg" alt="Bedroom" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
           </div>
-          <p class="body-14 text-mist uppercase tracking-wider" style="margin-top: 16px;">Bedroom</p>
+          <p class="body-14 text-mist uppercase tracking-wider" style="margin-top: 16px;" data-kr="침실">Bedroom</p>
         </div>
         <div class="col-span-4 cursor-pointer" data-reveal-image data-hover-scale data-plan-zoom style="transition-delay: 0.2s;">
           <div>
             <img src="assets/interior design/project one interior design studio/Bathroom4new.jpg" alt="Bathroom" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
           </div>
-          <p class="body-14 text-mist uppercase tracking-wider" style="margin-top: 16px;">Bathroom</p>
+          <p class="body-14 text-mist uppercase tracking-wider" style="margin-top: 16px;" data-kr="욕실">Bathroom</p>
         </div>
         <!-- Row 2 -->
         <div class="col-span-4 cursor-pointer" data-reveal-image data-hover-scale data-plan-zoom style="margin-top: 40px; transition-delay: 0s;">
           <div>
             <img src="assets/interior design/project one interior design studio/Dressing Room.jpg" alt="Dressing Room" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
           </div>
-          <p class="body-14 text-mist uppercase tracking-wider" style="margin-top: 16px;">Dressing Room</p>
+          <p class="body-14 text-mist uppercase tracking-wider" style="margin-top: 16px;" data-kr="드레스룸">Dressing Room</p>
         </div>
         <div class="col-span-4 cursor-pointer" data-reveal-image data-hover-scale data-plan-zoom style="margin-top: 40px; transition-delay: 0.1s;">
           <div>
             <img src="assets/interior design/project one interior design studio/Essraum.jpg" alt="Dining Room" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
           </div>
-          <p class="body-14 text-mist uppercase tracking-wider" style="margin-top: 16px;">Dining Room</p>
+          <p class="body-14 text-mist uppercase tracking-wider" style="margin-top: 16px;" data-kr="식당">Dining Room</p>
         </div>
         <div class="col-span-4 cursor-pointer" data-reveal-image data-hover-scale data-plan-zoom style="margin-top: 40px; transition-delay: 0.2s;">
           <div>
             <img src="assets/interior design/project one interior design studio/Kitchen1.1.jpg" alt="Kitchen" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
           </div>
-          <p class="body-14 text-mist uppercase tracking-wider" style="margin-top: 16px;">Kitchen</p>
+          <p class="body-14 text-mist uppercase tracking-wider" style="margin-top: 16px;" data-kr="주방">Kitchen</p>
         </div>
       </div>
     </section>
@@ -209,30 +215,32 @@
 
     <!-- 8. NEXT PROJECT -->
     <section class="flex items-center justify-center" style="padding: 100px 0;">
-      <a href="haus-der-jugend.html" class="body-48 font-light text-black" style="transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);" onmouseover="this.style.opacity='0.4'" onmouseout="this.style.opacity='1'">Next: Haus der Jugend &rarr;</a>
+      <a href="haus-der-jugend.html" class="body-48 font-light text-black" style="transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);" onmouseover="this.style.opacity='0.4'" onmouseout="this.style.opacity='1'" data-kr="다음: Haus der Jugend →">Next: Haus der Jugend &rarr;</a>
     </section>
 
   </main>
 
-  <!-- Plan Lightbox -->
+  <!-- Gallery Lightbox -->
   <div class="plan-lightbox" id="plan-lightbox">
-    <img src="" alt="Plan detail" id="plan-lightbox-img" />
+    <button id="lightbox-prev" style="position:absolute;left:20px;top:50%;transform:translateY(-50%);z-index:101;background:none;border:none;color:rgba(255,255,255,0.7);font-size:48px;cursor:pointer;padding:16px;transition:color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">&lsaquo;</button>
+    <img src="" alt="Gallery image" id="plan-lightbox-img" />
+    <button id="lightbox-next" style="position:absolute;right:20px;top:50%;transform:translateY(-50%);z-index:101;background:none;border:none;color:rgba(255,255,255,0.7);font-size:48px;cursor:pointer;padding:16px;transition:color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">&rsaquo;</button>
   </div>
 
   <!-- FOOTER -->
   <footer class="flex flex-col">
     <div class="grid-w bg-white" style="padding-top: 60px; padding-bottom: var(--margin);">
       <div class="col-span-5" data-reveal>
-        <a href="contact.html" class="link-underline text-black body-36">Contact me</a>
+        <a href="contact.html" class="link-underline text-black body-36" data-kr="연락하기">Contact me</a>
       </div>
       <div class="col-start-10 col-end-13 flex items-end body-16">
-        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top>Back to top</div>
+        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top data-kr="맨 위로">Back to top</div>
       </div>
     </div>
     <div class="bg-black text-white" style="padding: var(--margin);">
       <div class="w-full mb-5 font-semibold tracking-[0.12em] uppercase" style="font-size: clamp(48px, 8vw, 120px); line-height: 1;">ROJDI ALICI</div>
       <div class="flex justify-between body-16 opacity-50">
-        <span>All rights reserved<br>&copy; Rojdi Alici 2025</span>
+        <span data-kr="모든 권리 보유<br>&copy; Rojdi Alici 2025">All rights reserved<br>&copy; Rojdi Alici 2025</span>
       </div>
     </div>
   </footer>
@@ -248,25 +256,67 @@
     document.querySelectorAll('[data-reveal],[data-reveal-image]').forEach(function (el) { observer.observe(el); });
     var backBtn = document.querySelector('[data-back-to-top]');
     if (backBtn) { backBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); }); }
-    // Plan lightbox
+    // Gallery lightbox with arrow navigation
     var lightbox = document.getElementById('plan-lightbox');
     var lightboxImg = document.getElementById('plan-lightbox-img');
-    document.querySelectorAll('[data-plan-zoom]').forEach(function (el) {
+    var prevBtn = document.getElementById('lightbox-prev');
+    var nextBtn = document.getElementById('lightbox-next');
+    var galleryItems = document.querySelectorAll('[data-plan-zoom]');
+    var gallerySrcs = [];
+    var currentIndex = 0;
+
+    galleryItems.forEach(function (el, i) {
+      var img = el.querySelector('img');
+      if (img) gallerySrcs.push(img.src);
       el.addEventListener('click', function () {
-        var img = el.querySelector('img') || el;
-        if (img.src) {
-          lightboxImg.src = img.src;
-          lightbox.classList.add('is-open');
-          document.body.style.overflow = 'hidden';
-        }
+        currentIndex = i;
+        lightboxImg.src = gallerySrcs[currentIndex];
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
       });
     });
-    if (lightbox) {
-      lightbox.addEventListener('click', function () {
-        lightbox.classList.remove('is-open');
-        document.body.style.overflow = '';
-      });
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + gallerySrcs.length) % gallerySrcs.length;
+      lightboxImg.src = gallerySrcs[currentIndex];
     }
+    function showNext() {
+      currentIndex = (currentIndex + 1) % gallerySrcs.length;
+      lightboxImg.src = gallerySrcs[currentIndex];
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    prevBtn.addEventListener('click', function (e) { e.stopPropagation(); showPrev(); });
+    nextBtn.addEventListener('click', function (e) { e.stopPropagation(); showNext(); });
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox || e.target === lightboxImg) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'ArrowLeft') showPrev();
+      else if (e.key === 'ArrowRight') showNext();
+      else if (e.key === 'Escape') closeLightbox();
+    });
+  })();
+  </script>
+
+  <script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-kr]').forEach(function(el) {
+      if (!el.dataset.en) el.dataset.en = el.innerHTML;
+      el.innerHTML = lang === 'kr' ? el.dataset.kr : el.dataset.en;
+    });
+    document.querySelectorAll('[data-lang-btn]').forEach(function(btn) {
+      btn.style.opacity = btn.dataset.langBtn === lang ? '1' : '0.25';
+    });
+    localStorage.setItem('lang', lang);
+  }
+  (function() {
+    var saved = localStorage.getItem('lang');
+    if (saved === 'kr') setLang('kr');
   })();
   </script>
 

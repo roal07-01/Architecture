@@ -87,7 +87,14 @@
       <a href="index.html" class="flex-shrink-0">
         <img src="assets/global/logo.png" alt="Rojdi Alici" style="height: 28px; width: auto;" />
       </a>
-      <a href="index.html" class="body-16 hover:opacity-25">Back</a>
+      <div class="flex items-center gap-8 body-16">
+        <a href="index.html" class="hover:opacity-25 transition-opacity" data-kr="뒤로">Back</a>
+        <div class="flex items-center gap-1 body-14">
+          <button data-lang-btn="en" style="opacity:1;cursor:pointer;background:none;border:none;font:inherit;padding:0;" onclick="setLang('en')">EN</button>
+          <span class="opacity-25">|</span>
+          <button data-lang-btn="kr" style="opacity:0.25;cursor:pointer;background:none;border:none;font:inherit;padding:0;" onclick="setLang('kr')">KR</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -114,24 +121,24 @@
     <!-- 3. DESCRIPTION + INFO GRID -->
     <section class="grid-w" style="padding-top: 100px; padding-bottom: 100px;">
       <div class="col-span-7" data-reveal>
-        <p class="body-20 font-light" style="color: #000;">This digital arts museum in Graz, Austria is built on a central paradox: a building dedicated to light is housed within a heavy, almost windowless concrete shell. The museum&rsquo;s brutalist-inspired form stands as a bold, geometric mass in the city, its facade revealing little of the glowing world contained inside.</p>
-        <p class="body-20 font-light" style="margin-top: 24px; color: #000;">This deliberate contrast is key to the visitor&rsquo;s experience. The monolithic exterior functions as a threshold, preparing visitors for the immersive galleries within. By eliminating external light and distraction, the architecture focuses all attention on the interactive digital exhibits. The building becomes an essential part of the art, a dark chamber that makes the experience of light the main event.</p>
+        <p class="body-20 font-light" style="color: #000;" data-kr="오스트리아 그라츠에 위치한 이 디지털 아트 뮤지엄은 중심적 역설 위에 세워져 있습니다: 빛에 헌정된 건물이 무겁고 거의 창이 없는 콘크리트 외피 안에 놓여 있습니다. 뮤지엄의 브루탈리즘에서 영감받은 형태는 도시에서 대담하고 기하학적인 매스로 서 있으며, 파사드는 내부에 담긴 빛나는 세계를 거의 드러내지 않습니다.">This digital arts museum in Graz, Austria is built on a central paradox: a building dedicated to light is housed within a heavy, almost windowless concrete shell. The museum&rsquo;s brutalist-inspired form stands as a bold, geometric mass in the city, its facade revealing little of the glowing world contained inside.</p>
+        <p class="body-20 font-light" style="margin-top: 24px; color: #000;" data-kr="이 의도적인 대비는 방문자 경험의 핵심입니다. 모놀리식 외관은 문턱 역할을 하며, 방문자들을 내부의 몰입적 갤러리를 위해 준비시킵니다. 외부 빛과 산만함을 제거함으로써, 건축은 모든 주의를 인터랙티브 디지털 전시에 집중시킵니다. 건물은 예술의 필수적인 부분, 빛의 경험을 주요 이벤트로 만드는 어두운 챔버가 됩니다.">This deliberate contrast is key to the visitor&rsquo;s experience. The monolithic exterior functions as a threshold, preparing visitors for the immersive galleries within. By eliminating external light and distraction, the architecture focuses all attention on the interactive digital exhibits. The building becomes an essential part of the art, a dark chamber that makes the experience of light the main event.</p>
       </div>
       <div class="col-start-9 col-end-13" data-reveal>
         <div class="info-row flex justify-between body-14">
-          <span class="text-mist uppercase tracking-wider">Country</span>
-          <span>Austria</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="국가">Country</span>
+          <span data-kr="오스트리아">Austria</span>
         </div>
         <div class="info-row flex justify-between body-14">
-          <span class="text-mist uppercase tracking-wider">Client</span>
-          <span>Academic</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="클라이언트">Client</span>
+          <span data-kr="학술">Academic</span>
         </div>
         <div class="info-row flex justify-between body-14">
-          <span class="text-mist uppercase tracking-wider">Year</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="연도">Year</span>
           <span>2021</span>
         </div>
         <div class="info-row flex justify-between body-14" style="border-bottom: 1px solid #e5e5e5;">
-          <span class="text-mist uppercase tracking-wider">Architecture</span>
+          <span class="text-mist uppercase tracking-wider" data-kr="건축">Architecture</span>
           <span>Rojdi Alici</span>
         </div>
       </div>
@@ -140,14 +147,14 @@
     <!-- 4. QUOTE ON SOLID BLACK -->
     <section style="background: #000; padding: 120px var(--margin);">
       <div style="max-width: 800px;">
-        <p class="text-white body-36 font-light" data-reveal style="font-family: 'Playfair Display', serif; font-style: italic;">&ldquo;A dark chamber that makes the experience of light the main event.&rdquo;</p>
+        <p class="text-white body-36 font-light" data-reveal style="font-family: 'Playfair Display', serif; font-style: italic;" data-kr="&ldquo;빛의 경험을 주인공으로 만드는 어두운 챔버.&rdquo;">&ldquo;A dark chamber that makes the experience of light the main event.&rdquo;</p>
       </div>
     </section>
 
     <!-- 5. TEXT + PLAN -->
     <section class="grid-w" style="padding-top: 100px; padding-bottom: 100px;">
       <div class="col-span-4 flex items-center" data-reveal>
-        <p class="body-20 font-light">The museum is built on a central paradox: a building dedicated to light housed within a heavy, almost windowless concrete shell. This tension between interior and exterior defines every design decision, from the massing of the facade to the sequencing of galleries within. The visitor moves from darkness into light, a spatial narrative that mirrors the art itself.</p>
+        <p class="body-20 font-light" data-kr="뮤지엄은 중심적 역설 위에 세워져 있습니다: 빛에 헌정된 건물이 무겁고 거의 창이 없는 콘크리트 외피 안에 있습니다. 내부와 외부 사이의 이 긴장은 파사드의 매싱부터 내부 갤러리의 시퀀싱까지 모든 디자인 결정을 정의합니다. 방문자는 어둠에서 빛으로 이동하며, 이는 예술 자체를 반영하는 공간적 내러티브입니다.">The museum is built on a central paradox: a building dedicated to light housed within a heavy, almost windowless concrete shell. This tension between interior and exterior defines every design decision, from the massing of the facade to the sequencing of galleries within. The visitor moves from darkness into light, a spatial narrative that mirrors the art itself.</p>
       </div>
       <div class="col-start-6 col-end-13 cursor-pointer" data-reveal-image data-hover-scale data-plan-zoom>
         <img src="assets/museum lucis/plans/26.png" alt="Museum Lucis plan" class="max-w-full h-auto max-h-[85vh] mx-auto block" />
@@ -166,7 +173,7 @@
 
     <!-- 7. NEXT PROJECT -->
     <section class="flex items-center justify-center" style="padding: 100px 0;">
-      <a href="interior-design.html" class="body-48 font-light text-black" style="transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);" onmouseover="this.style.opacity='0.4'" onmouseout="this.style.opacity='1'">Next: Interior Design &rarr;</a>
+      <a href="interior-design.html" class="body-48 font-light text-black" style="transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);" onmouseover="this.style.opacity='0.4'" onmouseout="this.style.opacity='1'" data-kr="다음: Interior Design →">Next: Interior Design &rarr;</a>
     </section>
 
   </main>
@@ -180,16 +187,16 @@
   <footer class="flex flex-col">
     <div class="grid-w bg-white" style="padding-top: 60px; padding-bottom: var(--margin);">
       <div class="col-span-5" data-reveal>
-        <a href="contact.html" class="link-underline text-black body-36">Contact me</a>
+        <a href="contact.html" class="link-underline text-black body-36" data-kr="연락하기">Contact me</a>
       </div>
       <div class="col-start-10 col-end-13 flex items-end body-16">
-        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top>Back to top</div>
+        <div class="text-mist cursor-pointer hover:text-black" data-back-to-top data-kr="맨 위로">Back to top</div>
       </div>
     </div>
     <div class="bg-black text-white" style="padding: var(--margin);">
       <div class="w-full mb-5 font-semibold tracking-[0.12em] uppercase" style="font-size: clamp(48px, 8vw, 120px); line-height: 1;">ROJDI ALICI</div>
       <div class="flex justify-between body-16 opacity-50">
-        <span>All rights reserved<br>&copy; Rojdi Alici 2025</span>
+        <span data-kr="모든 권리 보유<br>&copy; Rojdi Alici 2025">All rights reserved<br>&copy; Rojdi Alici 2025</span>
       </div>
     </div>
   </footer>
@@ -224,6 +231,23 @@
         document.body.style.overflow = '';
       });
     }
+  })();
+  </script>
+
+  <script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-kr]').forEach(function(el) {
+      if (!el.dataset.en) el.dataset.en = el.innerHTML;
+      el.innerHTML = lang === 'kr' ? el.dataset.kr : el.dataset.en;
+    });
+    document.querySelectorAll('[data-lang-btn]').forEach(function(btn) {
+      btn.style.opacity = btn.dataset.langBtn === lang ? '1' : '0.25';
+    });
+    localStorage.setItem('lang', lang);
+  }
+  (function() {
+    var saved = localStorage.getItem('lang');
+    if (saved === 'kr') setLang('kr');
   })();
   </script>
 

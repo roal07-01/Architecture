@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Rojdi Alici</title>
+  <title>About — Rojdi Alici</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,8 +41,6 @@
     .hero-reveal-d2 { animation-delay: 0.7s; }
     @keyframes heroFadeUp { to { opacity: 1; transform: translateY(0); } }
     header a, footer a { transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), color 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
-    .contact-link { transition: color 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
-    .contact-link:hover { color: #c5a467; }
   </style>
 </head>
 <body>
@@ -64,31 +62,93 @@
     </div>
   </header>
 
-  <!-- CONTACT CONTENT -->
+  <!-- ABOUT CONTENT -->
   <main class="grid-w" style="min-height: calc(100vh - 72px); padding-top: 120px; padding-bottom: 120px; align-content: center;">
 
+    <!-- Photo -->
+    <div class="col-span-4 col-start-2 hero-reveal" data-reveal-image>
+      <img src="assets/global/photo.png" alt="Rojdi Alici" class="w-full h-auto" style="max-width: 340px;" />
+    </div>
+
     <!-- Info -->
-    <div class="col-span-6 col-start-4 flex flex-col justify-center">
+    <div class="col-start-7 col-end-12 flex flex-col justify-center">
 
-      <h1 class="body-48 font-light hero-reveal" style="margin-bottom: 12px;">Rojdi Alici</h1>
+      <h1 class="body-48 font-light hero-reveal" style="margin-bottom: 12px;" data-kr="소개">About</h1>
 
-      <p class="body-16 text-mist hero-reveal hero-reveal-d1" style="margin-bottom: 60px;" data-kr="건축 &amp; 디자인">Architecture &amp; Design</p>
+      <p class="body-20 font-light hero-reveal hero-reveal-d1" style="margin-bottom: 40px; color: #000;"></p>
 
-      <div class="flex flex-col" style="gap: 28px;">
+      <div class="flex flex-col hero-reveal hero-reveal-d2" style="gap: 28px;">
 
-        <div class="hero-reveal hero-reveal-d1">
+        <div>
           <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 6px;" data-kr="이메일">Email</p>
-          <a href="mailto:rojdi.alici@hotmail.com" class="body-20 font-light contact-link">rojdi.alici@hotmail.com</a>
+          <a href="mailto:rojdi.alici@hotmail.com" class="body-20 font-light" style="transition: color 0.45s cubic-bezier(0.22, 1, 0.36, 1);">rojdi.alici@hotmail.com</a>
         </div>
 
-        <div class="hero-reveal hero-reveal-d2">
-          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 6px;" data-kr="전화번호">Phone</p>
-          <a href="tel:+82-10-8340-2156" class="body-20 font-light contact-link">010-8340-2156</a>
-        </div>
-
-        <div class="hero-reveal hero-reveal-d2">
+        <div>
           <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 6px;" data-kr="위치">Location</p>
           <p class="body-20 font-light" data-kr="서울, 대한민국">Seoul, South Korea</p>
+        </div>
+
+        <div>
+          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 16px;" data-kr="학력">Education</p>
+          <div class="flex flex-col" style="gap: 16px;">
+            <div>
+              <p class="body-14 text-mist">2021–2022</p>
+              <p class="body-16 font-light" data-kr="서울대학교 교환학생">Exchange Student at Seoul National University</p>
+            </div>
+            <div>
+              <p class="body-14 text-mist">2019–2023</p>
+              <p class="body-16 font-light" data-kr="그라츠 공과대학교">University of Technology, Graz</p>
+              <p class="body-14 text-mist" data-kr="건축학 학사">Bachelor of Science, Architecture</p>
+            </div>
+            <div>
+              <p class="body-14 text-mist">2010–2019</p>
+              <p class="body-16 font-light">Akademisches Gymnasium Graz</p>
+              <p class="body-14 text-mist">GPA 3.2 / 4.5</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 16px;" data-kr="경력">Experience</p>
+          <div class="flex flex-col" style="gap: 16px;">
+            <div>
+              <p class="body-14 text-mist">2024.12 – 2025.08</p>
+              <p class="body-16 font-light">원밀리미터 디자인</p>
+              <p class="body-14 text-mist" data-kr="디자인 팀">Design Team</p>
+            </div>
+            <div>
+              <p class="body-14 text-mist">2017.06 – 2017.08</p>
+              <p class="body-16 font-light">Holding Graz</p>
+              <p class="body-14 text-mist" data-kr="인사 개발">Personal Development</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 16px;" data-kr="언어">Languages</p>
+          <div class="flex flex-col" style="gap: 6px;">
+            <p class="body-16 font-light">German <span class="body-14 text-mist" data-kr="모국어">(Native)</span></p>
+            <p class="body-16 font-light">Turkish <span class="body-14 text-mist" data-kr="모국어">(Native)</span></p>
+            <p class="body-16 font-light">English <span class="body-14 text-mist">(C1 High)</span></p>
+            <p class="body-16 font-light">Korean <span class="body-14 text-mist">(TOPIK 4)</span></p>
+          </div>
+        </div>
+
+        <div>
+          <p class="body-14 uppercase tracking-wider text-mist" style="margin-bottom: 16px;" data-kr="소프트웨어">Software</p>
+          <div class="flex flex-col" style="gap: 6px;">
+            <p class="body-16 font-light">ArchiCAD</p>
+            <p class="body-16 font-light">Rhino</p>
+            <p class="body-16 font-light">AutoCAD</p>
+            <p class="body-16 font-light">Twinmotion</p>
+            <p class="body-16 font-light">3ds Max</p>
+            <p class="body-16 font-light">Adobe Illustrator</p>
+            <p class="body-16 font-light">Adobe Photoshop</p>
+            <p class="body-16 font-light">Word</p>
+            <p class="body-16 font-light">Excel</p>
+            <p class="body-16 font-light">PowerPoint</p>
+          </div>
         </div>
 
       </div>
